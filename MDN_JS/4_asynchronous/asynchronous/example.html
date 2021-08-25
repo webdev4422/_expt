@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Simple synchronous JavaScript example</title>
+    <style>
+        canvas {
+            border: 1px solid rgb(0, 0, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <button class="blocking">Click me - Blocking code </button>
+    <hr>
+    <p><button class="fill">Fill canvas</button><button class="alert">Click me for alert</button></p>
+    <hr>
+    <button class="sync-worker">Click me - Web Worker</button>
+    <hr>
+    <button class="sync-js">Click me - Synchronous JS </button>
+    <hr>
+    <button class="async-callbacks">Click me - Async callbacks </button>
+    <hr>
+    <button class="async-code">Click me - Async code </button>
+    <hr>
+
+    <script>
+        //  simple-sync.html
+        const btn = document.querySelector('.blocking');
+        btn.addEventListener('click', () => {
+            let myDate;
+            for (let i = 0; i < 10000000; i++) {
+                let date = new Date();
+                myDate = date
+            }
+
+            console.log(myDate);
+
+            let pElem = document.createElement('p');
+            pElem.textContent = 'This is a newly-added paragraph after clicking "Blocking code" button.';
+            document.body.appendChild(pElem);
+        });
+
+
+
+        //  simple-sync-ui-blocking.html
+        const canvas = document.createElement('canvas');
+        canvas.width = 160;
+        canvas.height = 120;
+        document.body.appendChild(canvas);
+        let ctx = canvas.getContext('2d');
+
+        let alertBtn = document.querySelector('.alert');
+        let fillBtn = document.querySelector('.fill');
+
+        function degToRad(degrees) {
+            return degrees * Math.PI / 180;
+        };
+
+        function random(min, max) {
+            var num = Math.floor(Math.random() * (max - min)) + min;
+            return num;
+        }
+
+        function expensiveOperation() {
+            for (let i = 0; i < 500000; i++) {
+                ctx.fillStyle = 'rgba(0,0,255, 0.2)';
+                ctx.beginPath();
+                ctx.arc(random(0, canvas.width), random(0, canvas.height), 10, degToRad(0), degToRad(360), false);
+                ctx.fill()
+            }
+        }
+
+        fillBtn.addEventListener('click', expensiveOperation);
+
+        alertBtn.addEventListener('click', () =>
+            alert('You clicked me!')
+        );
+
+
+        // // simple-sync-worker.html NOT WORKING IN CHROME, WORK IN FIREFOX
+
+        // const btn2 = document.querySelector('.sync-worker');
+        // const worker = new Worker('worker.js');
+
+        // btn2.addEventListener('click', () => {
+        //     worker.postMessage('Go!');
+
+        //     let pElem = document.createElement('p');
+        //     pElem.textContent = 'This is a newly-added paragraph after clicking "Web worker" button.';
+        //     document.body.appendChild(pElem);
+        // });
+
+        // worker.onmessage = function (e) {
+        //     console.log(e.data);
+        // }
+
+
+
+        // Synchronous JavaScript
+        const btn3 = document.querySelector('.sync-js');
+        btn3.addEventListener('click', () => {
+            alert('You clicked me!');
+
+            let pElem = document.createElement('p');
+            pElem.textContent = 'This is a newly-added paragraph after clicking "Synchronous JS button".';
+            document.body.appendChild(pElem);
+        });
+
+
+        // Async callbacks ???????? same as  Synchronous JavaScript
+        const btn4 = document.querySelector('.async-callbacks');
+        btn4.addEventListener('click', () => {
+            alert('You clicked me!');
+
+            let pElem = document.createElement('p');
+            pElem.textContent = 'This is a newly-added paragraph after clicking "Async callbacks" button.';
+            document.body.appendChild(pElem);
+        });
+
+
+
+        // //  XMLHttpRequest API example
+        // function loadAsset(url, type, callback) {
+        //     let xhr = new XMLHttpRequest();
+        //     xhr.open('GET', url);
+        //     xhr.responseType = type;
+
+        //     xhr.onload = function () {
+        //         callback(xhr.response);
+        //     };
+
+        //     xhr.send();
+        // }
+
+        // function displayImage(blob) {
+        //     let objectURL = URL.createObjectURL(blob);
+
+        //     let image = document.createElement('img');
+        //     image.src = objectURL;
+        //     document.body.appendChild(image);
+        // }
+
+        // loadAsset('coffee.jpg', 'blob', displayImage);
+
+
+
+        // asynchronous code example
+        const btn5 = document.querySelector('.async-code');
+
+        console.log('registering click handler');
+
+        btn5.addEventListener('click', () => {
+            console.log("get click");
+            // console.log("all done"); solve async
+
+        })
+
+        // console.log("all done");
+
+
+
+    </script>
+</body>
+
+</html>

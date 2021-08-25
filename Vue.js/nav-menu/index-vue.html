@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Vue.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- <script src="https://unpkg.com/vue@next"></script> -->
+  <style>
+    #nav-menu {
+      /* display: flex; */
+      /* flex-flow: column wrap; */
+      display: none;
+      padding: 1rem;
+      border: 1rem;
+      margin: 1rem;
+
+    }
+
+    #nav-icon {
+      font-size: 1.5rem;
+      padding: 1rem;
+      border: 1rem;
+      margin: 1rem;
+      background-color: lightgrey;
+    }
+
+    #nav-icon:hover {
+      background-color: grey;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="c-top-nav">
+    <!-- nav menu -->
+    <a id="nav-icon" @click="navMenu" class="c-btn">&#9776;
+      <!-- nav menu icon--></a>
+
+    <div id="nav-menu">
+      <router-link v-if="!homeRoute" to="/" class="c-btn">Головна</i></router-link>
+      <a v-if="homeRoute" href="/#c-price-kits" v-scroll-to="'#c-price-kits'" class="c-btn">Прокат</a>
+      <a target="blank" href="https://store.x-drive.ua/" class="c-btn">Магазин</a>
+      <router-link v-if="homeRoute" class="c-btn" to="/service"> Cервіс</router-link>
+      <a v-if="bikeRoute" href="/ski" class="c-btn">Зима</a>
+      <a v-if="bikeRoute" href="/#c-price-bike" v-scroll-to="'#c-price-bike'" class="c-btn">Ціни</a>
+      <a v-if="bikeRoute" href="/#rent-features-section" v-scroll-to="'#c-routes'" class="c-btn">Маршрути</a>
+      <a v-if="homeRoute" href="/#contacts-section" v-scroll-to="'#contacts-section'" class="c-btn">Контакти</a>
+      <a v-if="homeRoute || bikeRoute" href="/#c-place-index" v-scroll-to="'#c-place-index'"
+        class="c-btn">Розташування</a>
+      <router-link v-if="homeRoute" to="/bike" class="c-btn">Велопрокат</i></router-link>
+
+      <script src="nav-menu.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Object-oriented JavaScript example</title>
+</head>
+
+<body>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see <a
+            href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What
+            are browser developer tools</a> for more information).</p>
+
+</body>
+
+<script>
+
+
+    /*
+        const person = {
+            // name: ['Bob', 'Smith'],
+            name: { // sub-namespaces
+                first: 'Bob',
+                last: 'Smith'
+            },
+            age: 32,
+            gender: 'male',
+            interests: ['music', 'skiing'],
+            bio: function () {
+                alert(this.name[0] + ' ' + this.name[1] + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+            },
+            greeting: function () {
+                alert('Hi! I\'m ' + this.name[0] + '.');
+            }
+        };
+        // Get object properties
+        // person.greeting()
+        // name[0]
+        // person.name.first
+        // person['name']['first']
+        // Set new object properties
+        // person['eyes'] = 'hazel';
+        // person.farewell = function () { alert("Bye everybody!"); }
+    
+    
+        // Define a person with a normal function
+        function createNewPerson(name) {
+            const obj = {};
+            obj.name = name;
+            obj.greeting = function () {
+                alert('Hi! I\'m ' + obj.name + '.');
+            };
+            return obj;
+        }
+        // Create person
+        const salva = createNewPerson('Salva');
+        salva.name;
+        // salva.greeting();
+    
+    
+        // Constructor function
+        function Person(name) {
+            this.name = name;
+            this.greeting = function () {
+                alert('Hi! I\'m ' + this.name + '.');
+            };
+        }
+        // Call a constructor to create some objects
+        let person1 = new Person('Bob');
+        let person2 = new Person('Sarah');
+ */
+
+    // Finished constructor function
+    function Person(first, last, age, gender, interests) {
+        this.name = {
+            first: first,
+            last: last
+        };
+        this.age = age;
+        this.gender = gender;
+        this.interests = interests;
+        this.bio = function () {
+            alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+        };
+        this.greeting = function () {
+            alert('Hi! I\'m ' + this.name.first + '.');
+        };
+    }
+    let person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
+
+
+    /*
+        // Object() constructor
+        let person1 = new Object();
+    
+            person1.name = 'Chris';
+        person1['age'] = 38;
+        person1.greeting = function () {
+            alert('Hi! I\'m ' + this.name + '.');
+        };
+    
+        // let person1 = new Object({
+        //     name: 'Chris',
+        //     age: 38,
+        //     greeting: function () {
+        //         alert('Hi! I\'m ' + this.name + '.');
+        //     }
+        // });
+    
+    
+        // create() method, create object2 from object1
+        let person2 = Object.create(person1);
+    */
+
+</script>
+
+</html>

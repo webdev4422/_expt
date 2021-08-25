@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Doc</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="heading1">Hello, World!</h1>
+  <h2 class="heading2">Greetings my Friend!</h2>
+  <h3 class="heading3">Welcom to JavaScript!</h3>
+
+  <!-- Navigation menu -->
+  <div class="c-top-nav">
+    <!-- nav menu -->
+    <a id="nav-icon" class="c-btn">&#9776;
+      <!-- nav menu icon-->
+    </a>
+
+    <div id="nav-menu">
+			<a href="#">test</a>
+			<a href="#">test</a>
+			<a href="#">test</a>
+			<a href="#">test</a>
+			<a href="#">test</a>
+			<a href="#">test</a>
+    </div>
+
+  </div>
+  <hr>
+
+
+
+
+  <script>
+    const navbarTop = document.onload = () => {
+
+      const navMenu = document.querySelector('#nav-menu');
+      const navIcon = document.querySelector('#nav-icon')
+
+      function hideOrShow() {
+        if (navMenu.style.display === 'block') {
+          navMenu.style.display = 'none';
+        } else {
+          navMenu.style.display = 'block';
+        }
+      }
+      navIcon.addEventListener('click', hideOrShow)
+
+    }
+    navbarTop()
+  </script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

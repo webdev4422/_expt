@@ -1,0 +1,169 @@
+/* COLOR VARIABLES */
+:root {
+  --grey-primary: #cccccc;
+  --grey-secondary: #909aa1;
+  --grey-tertiary: #576b77;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #a9a9a9;
+}
+
+.content {
+  max-width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.main {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  max-height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow-x: visible;
+  /* visible default value */
+  padding: 0;
+  border: 0;
+  margin: 0;
+  color: #222222;
+}
+
+.section {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100%;
+  /* margin: 0.1rem; */
+  background: var(--grey-primary);
+  padding: 0.5rem;
+}
+
+.section-one {
+  /* margin: 0 0 100rem 0; */
+}
+
+.section-two {
+  background: peachpuff;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  position: relative;
+  padding: 0.5rem;
+}
+
+.heart {
+  margin: 1rem;
+  display: inline-block;
+  z-index: 100;
+  background: pink;
+  width: 5rem;
+  height: 5rem;
+  position: relative;
+  top: 0.5rem;
+  transform: rotate(45deg);
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  background: pink;
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: 0rem;
+  left: -2.5rem;
+  transform: rotate(-45deg);
+}
+
+.heart::after {
+  top: -2.5rem;
+  left: 0rem;
+  transform: rotate(45deg);
+}
+
+.triangle {
+  margin: 1rem;
+  width: 5rem;
+  height: 5rem;
+  background: orange;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.circle {
+  margin: 1rem;
+  width: 5rem;
+  height: 5rem;
+  background: blue;
+  clip-path: circle();
+}
+
+.star {
+  margin: 1rem;
+  width: 5rem;
+  height: 5rem;
+  background: yellow;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  border: 2px black solid;
+  /* Default values: flex-grow: 0 | flex-shrink: 1 | flex-basis: auto */
+  flex: 0 0 auto;
+}
+
+.box1 {
+  background: red;
+}
+
+.box2 {
+  background: blue;
+}
+
+.box3 {
+  background: green;
+}
+
+.box4 {
+  background: cyan;
+  width: 100%;
+}
+
+.text-main {
+  /* width: 100%; */
+  padding: 1rem;
+  margin: 1rem;
+  text-align: left;
+  line-height: 1.5rem;
+  letter-spacing: 0.015rem;
+}
