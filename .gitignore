@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Untrack separate git repositories
+Projects/
