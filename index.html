@@ -2,58 +2,45 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Test Doc</title>
- <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  </link>
+  <style></style>
 </head>
 
+
 <body>
-  <h1 class="heading1">Hello, World!</h1>
-  <h2 class="heading2">Greetings my Friend!</h2>
-  <h3 class="heading3">Welcom to JavaScript!</h3>
+  <div class="content">
 
-  <!-- Navigation menu -->
-  <div class="c-top-nav">
-    <!-- nav menu -->
-    <a id="nav-icon" class="c-btn">&#9776;
-      <!-- nav menu icon-->
-    </a>
 
-    <div id="nav-menu">
-			<a href="#">test</a>
-			<a href="#">test</a>
-			<a href="#">test</a>
-			<a href="#">test</a>
-			<a href="#">test</a>
-			<a href="#">test</a>
-    </div>
+    <header class="header">
+      <nav class="nav"></nav>
+    </header>
+
+
+
+    <main class="main">
+
+
+      <div class="container">
+        <h1 class="heading">Greetigns!</h1>
+        <img class="image" src="" alt="Test image">
+        <a class="link" href="">Test link</a>
+        <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <hr>
+      </div>
+
+
+    </main>
+
+
+
+    <footer class="footer"></footer>
 
   </div>
-  <hr>
-
-
-
-
-  <script>
-    const navbarTop = document.onload = () => {
-
-      const navMenu = document.querySelector('#nav-menu');
-      const navIcon = document.querySelector('#nav-icon')
-
-      function hideOrShow() {
-        if (navMenu.style.display === 'block') {
-          navMenu.style.display = 'none';
-        } else {
-          navMenu.style.display = 'block';
-        }
-      }
-      navIcon.addEventListener('click', hideOrShow)
-
-    }
-    navbarTop()
-  </script>
-
   <script src="script.js"></script>
 </body>
 

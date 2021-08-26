@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test Doc</title>
+  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+  </link>
+  <style>
+    /*
+// COLORS
+Main color - Inkwell #363945, Classic Spring/Sommer Colors 2021, https://www.w3schools.com/colors/colors_2021.asp
+Generate palette http://paletton.com/#uid=23R220k7VcJbLlSa8hB5D6X6m3x
+
+import google fonts: "Roboto"
+*/
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+    /****** BASIC ******/
+    :root {
+      /* Main Primary color */
+      --color-primary-0: #363945;
+      --color-primary-1: #505877;
+      --color-primary-2: #454a5f;
+      --color-primary-3: #202126;
+      --color-primary-4: #101013;
+
+      /* Main Complement color */
+      --color-complement-0: #655e4c;
+      --color-complement-1: #ae9b6e;
+      --color-complement-2: #8c7f60;
+      --color-complement-3: #37342e;
+      --color-complement-4: #1c1a16;
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit;
+    }
+
+    html {
+      box-sizing: border-box;
+      /*Jonas Schmedtmann: font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px */
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      /*Jonas Schmedtmann: font-weight: 300; line-height: 1.6;*/
+    }
+
+    .content {
+      position: relative;
+      margin: 0 auto;
+      max-width: 100vw;
+      max-height: 100vh;
+      overflow-x: hidden;
+      display: grid;
+      place-items: center;
+      grid-template: repeat(auto-fit, minmax(min-content, max-content));
+    }
+
+
+
+    /*********************/
+    /****** CONTENT ******/
+    /*********************/
+
+    /****** HEADER ******/
+    .header {
+      position: fixed;
+      width: 100%;
+      height: 3rem;
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+      background: var(--color-primary-0);
+    }
+
+    .nav {}
+
+
+    /****** MAIN ******/
+
+    .main {
+      margin: 3rem 0 0 0;
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+    }
+
+    .container {
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+    }
+
+    .heading {}
+
+    .link {
+      text-decoration: none;
+      color: var(--color-complement-1);
+    }
+
+    .text {}
+
+    .image {}
+
+    .table {}
+
+    .button {}
+
+    .horizontal-line {
+      height: 0.01rem;
+      width: 80%;
+      background: var(--color-primary-1);
+      border-radius: 1rem;
+      margin: 2rem 0 3rem 0;
+    }
+
+    /****** FOOTER ******/
+    .footer {
+      width: 100%;
+      height: 3rem;
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+      background: var(--color-primary-0);
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="content">
+
+    <header class="header">
+      <nav class="nav">
+        <!-- <a id="nav-icon">&#9776;</a> -->
+        <div id="nav-menu">
+          <a class="link" href="#">test</a>
+          <a class="link" href="#">test</a>
+          <a class="link" href="#">test</a>
+          <a class="link" href="#">test</a>
+          <a class="link" href="#">test</a>
+          <a class="link" href="#">test</a>
+        </div>
+      </nav>
+    </header>
+
+
+    <main class="main">
+
+      <div class="container">
+
+        <h1 class="heading">Greetigns!</h1>
+        <img class="image" src="" alt="Test image">
+        <a class="link" href="">Test link</a>
+        <p class="text">Test text</p>
+        <hr class="horizontal-line">
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere officiis fugit nam. Sint explicabo ea vero
+          assumenda magni libero placeat, minima dicta perferendis pariatur, distinctio ratione? Architecto aliquam
+          nihil dicta tenetur, natus sint! Incidunt minima dicta perferendis, culpa delectus neque a natus consequuntur
+          fugiat illum ullam deleniti consectetur tenetur veritatis ratione. Modi, perferendis adipisci, ipsa soluta at
+          rerum alias nihil officia odio rem inventore exercitationem quidem repellendus laudantium sunt, quaerat
+          itaque! Necessitatibus, consectetur culpa rem, nemo corporis hic, assumenda sit fugiat quam ut dolorem nam
+          quibusdam ipsam enim laborum. Similique mollitia nemo eligendi eaque eius vel, impedit enim nesciunt magni?
+        </p>
+        <hr class="horizontal-line">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere officiis fugit nam. Sint explicabo ea vero
+          assumenda magni libero placeat, minima dicta perferendis pariatur, distinctio ratione? Architecto aliquam
+          nihil dicta tenetur, natus sint! Incidunt minima dicta perferendis, culpa delectus neque a natus consequuntur
+          fugiat illum ullam deleniti consectetur tenetur veritatis ratione. Modi, perferendis adipisci, ipsa soluta at
+          rerum alias nihil officia odio rem inventore exercitationem quidem repellendus laudantium sunt, quaerat
+          itaque! Necessitatibus, consectetur culpa rem, nemo corporis hic, assumenda sit fugiat quam ut dolorem nam
+          quibusdam ipsam enim laborum. Similique mollitia nemo eligendi eaque eius vel, impedit enim nesciunt magni?
+        </p>
+        <hr class="horizontal-line">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere officiis fugit nam. Sint explicabo ea vero
+          assumenda magni libero placeat, minima dicta perferendis pariatur, distinctio ratione? Architecto aliquam
+          nihil dicta tenetur, natus sint! Incidunt minima dicta perferendis, culpa delectus neque a natus consequuntur
+          fugiat illum ullam deleniti consectetur tenetur veritatis ratione. Modi, perferendis adipisci, ipsa soluta at
+          rerum alias nihil officia odio rem inventore exercitationem quidem repellendus laudantium sunt, quaerat
+          itaque! Necessitatibus, consectetur culpa rem, nemo corporis hic, assumenda sit fugiat quam ut dolorem nam
+          quibusdam ipsam enim laborum. Similique mollitia nemo eligendi eaque eius vel, impedit enim nesciunt magni?
+        </p>
+        <hr class="horizontal-line">
+
+
+      </div>
+
+    </main>
+
+
+    <footer class="footer">Footer</footer>
+
+
+
+  </div>
+  <script>
+    const navbarTop = document.onload = () => {
+
+      const navMenu = document.querySelector('#nav-menu');
+      const navIcon = document.querySelector('#nav-icon')
+
+      function hideOrShow() {
+        if (navMenu.style.display === 'block') {
+          navMenu.style.display = 'none';
+        } else {
+          navMenu.style.display = 'block';
+        }
+      }
+      navIcon.addEventListener('click', hideOrShow)
+
+    }
+    navbarTop()
+  </script>
+  <!-- <script src="script.js"></script> -->
+</body>
+
+</html>

@@ -47,7 +47,9 @@
 //     console.log(i)
 //   }
 // }
-//function testFunction() {
+
+function testFunction() {
   // alert(this)
-//  alert('Greetings my friend!')
-//}
+  alert('Greetings my friend!')
+}
+
