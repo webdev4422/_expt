@@ -86,7 +86,7 @@ import google fonts: "Roboto"
       position: absolute;
       top: 0;
       left: 0;
-      width: 80%;
+      width: 70%;
       height: 100%;
       display: grid;
       place-items: start;
@@ -94,6 +94,12 @@ import google fonts: "Roboto"
       transform: translateX(-100vw);
       transition: 0.5s;
       z-index: 10;
+    }
+
+    @media (min-width: 768px) {
+      .nav {
+        width: 30%;
+      }
     }
 
     .header__dim--active {
@@ -305,25 +311,23 @@ import google fonts: "Roboto"
 
 
     /* Toggle menu */
+
     function toggleMenu(e) {
       nav.classList.toggle('show')
       content.classList.toggle('lock')
       headerDim.classList.toggle('header__dim--active')
     }
-
     const navItems = [navButton, nav, headerDim]
     navItems.forEach(item => {
       item.addEventListener('click', toggleMenu, false)
     })
 
-
-
-    // const navItems = [navButton, nav]
+    // const navItems = [navButton, nav, headerDim]
     // navItems.forEach(item => {
     //   item.addEventListener('click', event => {
     //     nav.classList.toggle('show')
     //     content.classList.toggle('lock')
-    //     headerDim.classList.toggle('header__dim--on')
+    //     headerDim.classList.toggle('header__dim--active')
     //   })
     // })
 
