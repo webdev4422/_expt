@@ -105,4 +105,3 @@ dist
 
 # Untrack separate git repositories
 Projects/*
-Projects/.*
