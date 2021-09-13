@@ -4,11 +4,6 @@ const htmlmin = require('gulp-htmlmin')
 const cleancss = require('gulp-clean-css')
 const uglify = require('gulp-uglify')
 const imagemin = require('gulp-imagemin')
-
-// import imagemin from 'gulp-imagemin';
-// import * as imagemin from 'imagemin';
-// import { imagemin } from 'imagemin';
-
 // const brotli = require('gulp-brotli')
 
 // Clean dir
@@ -70,6 +65,10 @@ gulp.task('compress-img', () => {
     .pipe(imagemin({ progressive: true, svgoPlugins: [{ removeViewBox: false }], interlaced: true, optimizationLevel: 7 }))
     .pipe(gulp.dest('./dist/img/'))
 })
+
+// TODO
+// Add webp converter, check SVG
+// https://www.youtube.com/watch?v=stFOy0Noahg
 
 // Compress with brotli algorithm
 // gulp.task('compress-brotli', () => {return gulp.src('./src/*').pipe(brotli.compress()).pipe(gulp.dest('./dist'))})
