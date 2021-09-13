@@ -53,3 +53,4 @@ function testFunction() {
   alert('Greetings my friend!')
 }
 
+console.log(' OO  K K\nO  O KK\n 00  K K') // Log 'OK' for debug

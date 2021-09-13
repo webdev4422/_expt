@@ -1,0 +1,30 @@
+{
+  "name": "zzz-dev",
+  "version": "1.0.0",
+  "description": "Test environment",
+  "main": "Node.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webdev4422/zzz-dev.git"
+  },
+  "author": "temp4422",
+  "license": "ISC",
+  "bugs": {
+    "url": "https:/         /github.com/webdev4422/zzz-dev/issues"
+  },
+  "homepage": "https://github.com/webdev4422/zzz-dev#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglify": "^3.0.2"
+  }
+}
