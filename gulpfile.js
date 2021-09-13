@@ -3,7 +3,12 @@ const htmlmin = require('gulp-htmlmin')
 const cleanCSS = require('gulp-clean-css')
 const uglify = require('gulp-uglify')
 const brotli = require('gulp-brotli')
+const del = require('del')
 
+// Clean dir
+gulp.task('clean-dir', () => {
+  return del('dist/**', { force: true })
+})
 // Gulp task to minify HTML files
 gulp.task('minify-html', () => {
   return gulp
@@ -54,4 +59,4 @@ gulp.task('compress-brotli', () => {
 })
 
 // Run all tasks with default command
-gulp.task('default', gulp.series('minify-html', 'minify-css', 'minify-js', 'compress-brotli'))
+gulp.task('default', gulp.series('clean-dir', 'minify-html', 'minify-css', 'minify-js', 'compress-brotli'))
