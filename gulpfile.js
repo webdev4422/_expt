@@ -3,7 +3,7 @@ const del = require('del')
 const htmlmin = require('gulp-htmlmin')
 const cleancss = require('gulp-clean-css')
 const uglify = require('gulp-uglify')
-// const imagemin = require('gulp-imagemin')
+const imagemin = require('gulp-imagemin')
 
 // import imagemin from 'gulp-imagemin';
 // import * as imagemin from 'imagemin';
@@ -15,6 +15,7 @@ const uglify = require('gulp-uglify')
 gulp.task('clean-dir', () => {
   return del('dist/**', { force: true })
 })
+
 // Minify HTML files
 gulp.task('minify-html', () => {
   return gulp
@@ -29,15 +30,17 @@ gulp.task('minify-html', () => {
         removeTagWhitespace: true,
       })
     )
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./dist/'))
 })
+
 // Minify CSS files
 gulp.task('minify-css', () => {
   return gulp
     .src('./src/**/*.css')
     .pipe(cleancss({ level: '2' }))
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./dist/'))
 })
+
 // Minify JS files
 gulp.task('minify-js', () => {
   return gulp
@@ -57,17 +60,19 @@ gulp.task('minify-js', () => {
         },
       })
     )
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./dist/'))
 })
+
+// Compress images
+gulp.task('compress-img', () => {
+  return gulp
+    .src('./src/img/**/*')
+    .pipe(imagemin({ progressive: true, svgoPlugins: [{ removeViewBox: false }], interlaced: true, optimizationLevel: 7 }))
+    .pipe(gulp.dest('./dist/img/'))
+})
+
 // Compress with brotli algorithm
 // gulp.task('compress-brotli', () => {return gulp.src('./src/*').pipe(brotli.compress()).pipe(gulp.dest('./dist'))})
 
-// Compress images
-// gulp.task('compress-img', () => {
-//   return gulp.src('./src/img/**')
-//   .pipe(imagemin())
-//   .pipe(gulp.dest('./dist'))
-// })
-
 // Run all tasks with default command
-gulp.task('default', gulp.series('clean-dir', 'minify-html', 'minify-css', 'minify-js'))
+gulp.task('default', gulp.series('clean-dir', 'minify-html', 'minify-css', 'minify-js', 'compress-img'))
