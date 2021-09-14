@@ -4,6 +4,7 @@ const htmlmin = require('gulp-htmlmin')
 const cleancss = require('gulp-clean-css')
 const uglify = require('gulp-uglify')
 const imagemin = require('gulp-imagemin')
+const webp = require('gulp-webp')
 // const brotli = require('gulp-brotli')
 
 // Clean dir
@@ -66,12 +67,22 @@ gulp.task('compress-img', () => {
     .pipe(gulp.dest('./dist/img/'))
 })
 
+// Convert images to webp
+// Workaround: 'for file in *; do cwebp -q 80 "$file" -o "$file.webp"; done'
+gulp.task('convert-webp', () => {
+  return gulp
+  .src('./src/img/**/*')
+  .pipe(webp())
+  .pipe(gulp.dest('./dist/img/'))
+})
+
+
 // TODO
-// Add webp converter, check SVG
+// check SVG
 // https://www.youtube.com/watch?v=stFOy0Noahg
 
 // Compress with brotli algorithm
 // gulp.task('compress-brotli', () => {return gulp.src('./src/*').pipe(brotli.compress()).pipe(gulp.dest('./dist'))})
 
 // Run all tasks with default command
-gulp.task('default', gulp.series('clean-dir', 'minify-html', 'minify-css', 'minify-js', 'compress-img'))
+gulp.task('default', gulp.series('clean-dir', 'minify-html', 'minify-css', 'minify-js', 'compress-img', 'convert-webp'))
