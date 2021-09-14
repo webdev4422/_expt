@@ -27,10 +27,31 @@
 
       <div class="container">
         <h1 class="heading">Greetigns!</h1>
-        <img class="image" src="/src/img/mount1.jpg" alt="Test image">
+
+
+        <h2>Images</h2>
+        <!-- `img` element -->
+        <img class="image1" src="/src/img/mount1-300.jpg" alt="Test image">
+
+        <!-- `img` element, `srcset` attribute -->
+        <!-- <img class="image2"
+          srcset="/src/img/mount1-300.jpg 300w, /src/img/mount1-480.jpg 480w, /src/img/mount1-1200.jpg 1200w"
+          sizes="(max-width: 320px) 300px, (max-width: 480px) 480px, (max-width: 1200px) 1200px"
+          src="/src/img/mount1.jpg" alt="Test image"> -->
+
+        <!-- `picture` and `source` elements, `srcset` attributes -->
+        <!-- <picture class="image3">
+          <source media="(max-width: 320px)" srcset="/src/img/mount1-300.jpg">
+          <source media="(max-width: 480px)" srcset="/src/img/mount1-480.jpg">
+          <source media="(max-width: 1200px)" srcset="/src/img/mount1-1200.jpg">
+          <source srcset="/src/img/mount1.webp" type="image/webp">
+          <img src="/src/img/mount1.jpg" alt="Test image">
+        </picture> -->
+
+
+        <hr>
         <a class="link" href="">Test link</a>
         <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <hr>
       </div>
 
 

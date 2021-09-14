@@ -5,7 +5,7 @@ Generate palette http://paletton.com/#uid=23R220k7VcJbLlSa8hB5D6X6m3x
 
 */
 /* import google fonts: "Roboto" */
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
 
 :root {
   /* Main Primary color */
@@ -31,13 +31,12 @@ Generate palette http://paletton.com/#uid=23R220k7VcJbLlSa8hB5D6X6m3x
   box-sizing: inherit;
 }
 
-html {
-  box-sizing: border-box;
-}
-
+html,
 body {
   font-family: 'Roboto', sans-serif;
   color: var(--color-primary-0);
+  box-sizing: border-box;
+  font-size: 62.5%; /* 10px/16px = 62.5% -> 1rem = 10px*/
 }
 
 .content {
@@ -71,6 +70,29 @@ body {
   padding: 0.5rem;
 }
 
+.image1 {
+  background: red;
+  /* width: 20rem; */
+  /* height: 100%; */
+}
+.image2 {
+  background: green;
+  /* width: 10rem; */
+  /* height: 100%; */
+}
+.image3 {
+  background: blue;
+  /* width: 10rem; */
+  /* overflow: hidden; */
+  /* height: 100%; */
+}
+
+hr {
+  width: 90%;
+  height: 1px;
+  background: #000;
+  margin: 2rem 0 2rem 0;
+}
 .heart {
   margin: 1rem;
   display: inline-block;
