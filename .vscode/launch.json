@@ -11,7 +11,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/src/script.js"
+      "program": "${workspaceFolder}/freecodecamp.org/JS-Algorithms-and-Data-Structures.js"
     }
   ]
 }

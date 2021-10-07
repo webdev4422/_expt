@@ -325,3 +325,395 @@
 //
 ////////////////////////////////////////////
 //
+
+//Use Arrow Functions to Write Concise Anonymous Functions
+//
+// const myFunc = function () {
+//   const myVar = 'value'
+//   return myVar
+// }
+// const myFunc = () => {
+//   const myVar = 'value'
+//   return myVar
+// }
+// const myFunc = () => 'value'
+// myFunc()
+//
+// const magic = () => new Date();
+
+//Set Default Parameters for Your Functions
+//
+// const greeting = (name = 'Anonymous') => 'Hello ' + name
+// console.log(greeting())
+
+//Use the Rest Parameter with Function Parameters
+//
+// const sum = (...argsX) => {
+//   const args = argsX
+//   return args.reduce((a, b) => a + b, 0)
+// }
+// Squeeze to arrow function
+// const sum = (...args) => (args.reduce((a, b) => a + b, 0))
+// console.log(sum(1, 2, 3))
+
+//Use the Spread Operator to Evaluate Arrays In-Place
+//ES6 introduces the spread operator, which allows us to expand arrays and other expressions in places where multiple parameters or elements are expected.
+// const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY']
+// let arr2
+// arr2 = [...arr1]
+// const arr = [6, 89, 3, 45]
+// const maximus = Math.max(...arr)
+
+//Use Destructuring Assignment to Extract Values from Objects
+//
+// const user = { name: 'John Doe', age: 34 };
+// const name = user.name;
+// const age = user.age;
+// const {name, age} = user
+
+//Use Destructuring Assignment to Assign Variables from Nested Objects
+// const user = {
+//   johnDoe: {
+//     age: 34,
+//     email: 'johnDoe@freeCodeCamp.com',
+//   },
+// }
+// const {
+//   johnDoe: { age, email },
+// } = user
+
+//Use Destructuring Assignment to Assign Variables from Arrays
+//
+// let a = 8, b = 6;
+// [a, b] = [b, a]
+// console.log(a, b)
+
+//Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements
+//
+// const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// function removeFirstTwo(list) {
+//   // Only change code below this line
+//   const [a, b, ...arr] = list // Change this line
+//   // Only change code above this line
+//   return arr
+// }
+// const arr = removeFirstTwo(source)
+
+//Create Strings using Template Literals
+//
+// const result = {
+//   success: ['max-length', 'no-amd', 'prefer-arrow-functions'],
+//   failure: ['no-var', 'var-on-top', 'linebreak'],
+//   skipped: ['no-extra-semi', 'no-dup-keys'],
+// }
+// function makeList(arr) {
+//   // Only change code below this line
+//   const failureItems = [...arr]
+//   for (let i = 0; i < arr.length; i++) {
+//     failureItems[i] = `<li class="text-warning">${arr[i]}</li>`
+//   }
+//   // Only change code above this line
+//   return failureItems
+// }
+// const failuresList = makeList(result.failure)
+// console.log(failuresList)
+
+//Write Concise Object Literal Declarations Using Object Property Shorthand
+//
+// const getMousePosition = (x, y) => ({
+//   x: x,
+//   y: y,
+// })
+// const getMousePosition = (x, y) => ({ x, y })
+
+//Use getters and setters to Control Access to an Object
+//
+// // Only change code below this line
+// class Thermostat {
+//   constructor(temperature) {
+//     this._temperature = temperature
+//   }
+//   // getter
+//   get temperature() {
+//     return (this._temperature - 32) * (5 / 9)
+//   }
+//   // setter
+//   set temperature(newTemp) {
+//     this._temperature = (newTemp * 9.0) / 5 + 32
+//   }
+// }
+// // Only change code above this line
+// const thermos = new Thermostat(76) // Setting in Fahrenheit scale
+// let temp = thermos.temperature // 24.44 in Celsius
+// thermos.temperature = 26
+// temp = thermos.temperature // 26 in Celsius
+// thermos.temp = 15
+
+//Import a Default Export
+// export default function add(x, y) {
+//   return x + y;
+// }
+// not surrounded by curly braces '{}'.
+// import add from "./math_functions.js"
+
+//Complete a Promise with resolve and reject
+//
+// const myPromise = new Promise((resolve, reject) => {
+//   let responseFromServer
+//   if (responseFromServer) {
+//     resolve('Promise was fulfilled')
+//   } else {
+//     reject('Promise was rejected')
+//   }
+// })
+//   .then((result) => {
+//     console.log(result)
+//   })
+//   .catch((error) => {
+//     console.log(error)
+//   })
+
+//
+/////////////////////////////////////////////
+//
+// Regular Expressions
+//
+////////////////////////////////////////////
+//
+
+//Match a Literal String with Different Possibilities
+//
+// let petString = 'James has a pet cat.'
+// let petRegex = /dog|cat|bird|fish/
+// let result = petRegex.test(petString)
+
+//Find More Than the First Match
+//
+// let twinkleStar = "Twinkle, twinkle, little star";
+// let starRegex = /twinkle/gi; // Change this line
+// let result = twinkleStar.match(starRegex); // Change this line
+// console.log(result)
+
+//Match Single Characters Not SpecifiedPassed
+//
+// let quoteSample = 'The quick brown fox jumps over the lazy dog.'
+// let alphabetRegex = /[^aeiou]/gi // Change this line
+// let result = quoteSample.match(alphabetRegex) // Change this line
+// console.log(result)
+
+//Match Characters that Occur One or More TimesPassed
+// let difficultSpelling = "Mississippi";
+// let myRegex = /s+/g; // +, *
+// let result = difficultSpelling.match(myRegex);
+// console.log(result)
+
+//Match Beginning String PatternsPassed
+// let rickyAndCal = "Cal and Ricky both like racing.";
+// let calRegex = /^Cal/; //  ^, $
+// let result = calRegex.test(rickyAndCal);
+// console.log(result)
+
+//Find Characters with Lazy Matching
+//
+// let text = "<h1>Winter is coming</h1>";
+// let myRegex = /<.*?/; // Change this line
+// let result = text.match(myRegex);
+// console.log(result)
+
+//Match All Letters and Numbers - shorthand character classes.
+//
+// let quoteSample = 'The five boxing wizards jump quickly.'
+// let alphabetRegexV2 = /\w/gi // Same as [A-Za-z0-9_] alphanumerics characters and underscore
+// let result = quoteSample.match(alphabetRegexV2).length
+// console.log(result)
+
+//Restrict Possible Usernames
+//
+// let username = 'JackOfAllTrades'
+// let userCheck = /^[a-zA-Z][a-zA-Z]+$|^[a-zA-Z][a-zA-Z]+[0-9]+$|^[a-zA-Z][0-9][0-9]+$/
+// // let result = userCheck.test(username);
+// let result = username.match(userCheck)
+// console.log(result)
+
+//Specify Upper and Lower Number of Matches
+//
+// let ohStr = "Ohhh no";
+// let ohRegex = /Oh{3,6} no/; // Change this line
+// let result = ohRegex.test(ohStr);
+
+//Check for All or None
+//
+// let favWord = "favorite";
+// let favRegex = /favou?rite/; // Change this line
+// let result = favRegex.test(favWord);
+
+//Positive and Negative Lookahead
+//
+// let sampleWord = "a12345";
+// let pwRegex = /(?=\w{5,})(?=\D*\d\d)(?!\d)/; // Change this line
+// let result = pwRegex.test(sampleWord);
+// let result = sampleWord.match(pwRegex);
+// console.log(result)
+
+//Check For Mixed Grouping of Characters
+//
+// let myString = "Eleanor Roosevelt";
+// let myRegex = /(Franklin|Eleanor).+Roosevelt/; // Change this line
+// let result = myRegex.test(myString);
+
+// Reuse Patterns Using Capture Groups
+//
+// let repeatNum = "42 42 42";
+// let reRegex = /^(\d+) \1 \1$/; // Change this line
+// let result = reRegex.test(repeatNum);
+
+// Use Capture Groups to Search and Replace
+//
+// let str = "one two three";
+// let fixRegex = /(\w+)\s(\w+)\s(\w+)/; // Change this line
+// let replaceText = "$3 $2 $1"; // Change this line
+// let result = str.replace(fixRegex, replaceText);
+
+//Remove Whitespace from Start and End
+//
+// let hello = '   Hello, World!  '
+// let wsRegex = /(\s+)(\s+)/g // Change this line
+// let result = hello.replace(wsRegex, '') // Change this line
+// console.log(result)
+
+//
+/////////////////////////////////////////////
+//
+// Debugging
+//
+////////////////////////////////////////////
+//
+
+// function loopy() {
+//   while(true) {
+//     console.log("Hello, world!");
+//   }
+// }
+// loopy()
+
+//
+/////////////////////////////////////////////
+//
+// Basic Data Structures
+//
+////////////////////////////////////////////
+//
+
+//Remove Items Using splice()
+//
+// let array = ['I', 'am', 'feeling', 'really', 'happy']
+// let newArray = array.splice(2, 3)
+// console.log(newArray)
+
+//Copy an Array with the Spread OperatorPassed
+//
+// function copyMachine(arr, num) {
+//   let newArr = []
+//   while (num >= 1) {
+//     // Only change code below this line
+//     newArr.push([...arr])
+//     // Only change code above this line
+//     num--
+//   }
+//   return newArr
+// }
+// console.log(copyMachine([true, false, true], 2))
+
+//Iterate Through All an Array's Items Using For Loops
+//
+// function filteredArray(arr, elem) {
+//   let newArr = []
+//   // Only change code below this line
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i].indexOf(elem) < 0) {
+//       console.log(arr[i])
+//       newArr.push(arr[i])
+//     }
+//   }
+//   // Only change code above this line
+//   return newArr
+// }
+// console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
+
+//Check if an Object has a Property
+//
+// let users = {
+//   Alan: {
+//     age: 27,
+//     online: true,
+//   },
+//   Jeff: {
+//     age: 32,
+//     online: false,
+//   },
+//   Sarah: {
+//     age: 48,
+//     online: true,
+//   },
+//   Ryan: {
+//     age: 19,
+//     online: false,
+//   },
+//   test: {
+//     age: 19,
+//     online: true,
+//   },
+// }
+// function isEveryoneHere(userObj) {
+//   // Only change code below this line
+//   // Alan, Jeff, Sarah, Ryan
+//   if ('Alan' in userObj && 'Jeff' in userObj && 'Ryan' in userObj && 'Sarah' in userObj) {
+//     return true
+//   } else {
+//     return false
+//   }
+//   // Only change code above this line
+// }
+// console.log(isEveryoneHere(users))
+
+//Iterate Through the Keys of an Object with a for...in Statement
+//
+// function countOnline(usersObj) {
+//   // Only change code below this line
+//   let count = 0
+//   for (let i in usersObj) {
+//     // console.log(i)
+//     if (usersObj[i].online == true) {
+//       count ++
+//     }
+//   }
+//   return count
+//   // Only change code above this line
+// }
+// console.log(countOnline(users))
+
+//
+/////////////////////////////////////////////
+//
+// Basic Algorithm Scripting
+//
+////////////////////////////////////////////
+//
+
+// Reverse a StringPassed
+//
+// function reverseString(str) {
+//   return str.split('').reverse().join('')
+// }
+// console.log(reverseString('hello'))
+
+//Factorialize a Number
+//
+function factorialize(num) {
+  for (let i = 1; i <= num; i++) {
+    console.log(i)
+  }
+  return num
+}
+
+console.log(factorialize(5))
