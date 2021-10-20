@@ -165,8 +165,8 @@
 // function multiplyAll(arr) {
 //   var product = 1
 //   for (var i = 0; i < arr.length; i++) {
-//     for (var j = 0; j < arr[i].length; j++) {
-//       product *= arr[i][j]
+//     for (var result = 0; result < arr[i].length; result++) {
+//       product *= arr[i][result]
 //     }
 //   }
 //   console.log(product)
@@ -709,11 +709,69 @@
 
 //Factorialize a Number
 //
-function factorialize(num) {
-  for (let i = 1; i <= num; i++) {
-    console.log(i)
-  }
-  return num
-}
+// function factorialize(num) {
+//   let result = 1
+//   for (let i = 1; i <= num; i++) {
+//     result = result * i
+//   }
+//   return result
+// }
+// console.log(factorialize(5))
 
-console.log(factorialize(5))
+//Find the Longest Word in a String
+//
+// function findLongestWordLength(str) {
+//   const arr = str.split(' ')
+//   const numArr = []
+//   for (let i = 0; i < arr.length; i++) {
+//     numArr.push(arr[i].length)
+//   }
+//   console.log(numArr)
+//   let result = 0
+//   for (let i = 0; i < numArr.length; i++) {
+//     if (result < numArr[i]) {
+//       result = numArr[i]
+//     }
+//   }
+//   console.log(result)
+//   return result
+// }
+// findLongestWordLength('The quick brown fox jumped over the lazy dog')
+
+//Return Largest Numbers in Arrays
+//
+// function largestOfFour(arr) {
+//   let result = []
+//   for (let i = 0; i < arr.length; i++) {
+//     // let largestNum = Number.MIN_SAFE_INTEGER
+//     let largestNum = arr[i][0]
+//     for (let j = 0; j < arr[i].length; j++) {
+//       if (largestNum < arr[i][j]) {
+//         largestNum = arr[i][j]
+//       }
+//     }
+//     result.push(largestNum)
+//   }
+//   console.log(largestNum)
+//   console.log(result)
+//   return result
+// }
+// largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]])
+
+//Confirm the Ending
+//
+// function confirmEnding(str, target) {
+//   let endingChar = str.length - target.length
+//   let j = 0
+//   for (let i = 0; i < target.length; i++) {
+//     if (str.charAt(endingChar + i) == target[i]) {
+//       j++
+//     } else {
+//       return false
+//     }
+//   }
+//   if (j == target.length) {
+//     return true
+//   }
+// }
+// console.log(confirmEnding('Open sesame', 'sage'))
