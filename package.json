@@ -18,5 +18,6 @@
   "bugs": {
     "url": "https:/         /github.com/webdev4422/zzz-dev/issues"
   },
-  "homepage": "https://github.com/webdev4422/zzz-dev#readme"
+  "homepage": "https://github.com/webdev4422/zzz-dev#readme",
+  "packageManager": "yarn@3.0.2"
 }
