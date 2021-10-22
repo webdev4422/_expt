@@ -775,3 +775,30 @@
 //   }
 // }
 // console.log(confirmEnding('Open sesame', 'sage'))
+
+//Repeat a String Repeat a String
+//
+// function repeatStringNumTimes(str, num) {
+//   let newStr = ''
+//   if (num == 0) {
+//     return ''
+//   } else if (num > 0) {
+//     for (let i = 0; i < num; i++) {
+//       for (let i = 0; i < str.length; i++) {
+//         console.log(str[i])
+//         newStr += str[i]
+//       }
+//     }
+//     return newStr
+//   } else if (num < 0) {
+//     return ''
+//   }
+// }
+// repeatStringNumTimes('abc', 0)
+
+//Truncate a String
+//
+function truncateString(str, num) {
+  return str
+}
+truncateString('A-tisket a-tasket A green and yellow basket', 8)

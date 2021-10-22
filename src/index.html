@@ -8,7 +8,28 @@
   <title>Test Doc</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   </link>
-  <style></style>
+  <style>
+    body {
+      background: #202020;
+    }
+
+    .heading {
+      margin: 10rem 2rem;
+      color: white;
+    }
+
+    /* Cursor */
+    .typewriter>.txt {
+      border-right: .05em solid;
+      animation: caret 1s steps(1) infinite;
+    }
+
+    @keyframes caret {
+      50% {
+        border-color: transparent;
+      }
+    }
+  </style>
 </head>
 
 
@@ -23,10 +44,12 @@
 
 
     <main class="main">
-
-
       <div class="container">
-        <h1 class="heading">Greetigns!</h1>
+
+        <h1 class="heading response typewriter" data-wait="1000"
+          data-words='["Вітання!", "Greetings!", "Les salutations!", "Grüße!", "Saluti!", "问候！", "Приветствие!", "!سلام تحية", "Saluto!", "Salutació!", "!דְרִישַׁת שָׁלוֹם", "Salom!", "¡Saludo!", "ຊົມເຊີຍ!", "挨拶！", "გამარჯობა!", "Powitanie!", "Beannacht!", "Hilsen!", "Hälsning!", "Мэндчилгээ!", "Pozdrav!", "Üdvözlet!", "Salut!", "Sveikinu!", "Salam!", "Salutem!", "تبریک!", "Saudações!", "Lep pozdrav!", "S pozdravom!", "Kwaziso!", "Salaan!", "Χαιρετισμός!", "Salamlayıram!", "Поздрав!", "Aloha!", "शुभकामना!", "Kveðja!", "Прывітанне!"]'>
+          Greetigns!
+        </h1>
 
 
         <h2>Images</h2>
@@ -53,6 +76,23 @@
         <a class="link" href="">Test link</a>
         <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       </div>
+      <hr class="hr">
+      <button class="button" onclick="testReq()">API request</button>
+      <hr class="hr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     </main>
@@ -62,6 +102,73 @@
     <footer class="footer"></footer>
 
   </div>
+  <script>
+
+    // ES6 Class
+    class TypeWriter {
+      constructor(txtElement, words, wait = 3000) {
+        this.txtElement = txtElement;
+        this.words = words;
+        this.txt = '';
+        this.wordIndex = 0;
+        this.wait = parseInt(wait, 10);
+        this.type();
+        this.isDeleting = false;
+      }
+
+      type() {
+        // Current index of word
+        const current = this.wordIndex % this.words.length;
+        // Get full text of current word
+        const fullTxt = this.words[current];
+
+        // Check if deleting
+        if (this.isDeleting) {
+          // Remove char
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+          // Add char
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        // Insert txt into element
+        this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+        // Initial Type Speed
+        let typeSpeed = 200;
+
+        if (this.isDeleting) {
+          typeSpeed /= 2.5;
+        }
+
+        // If word is complete
+        if (!this.isDeleting && this.txt === fullTxt) {
+          // Make pause at end
+          typeSpeed = this.wait;
+          // Set delete to true
+          this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+          this.isDeleting = false;
+          // Move to next word
+          this.wordIndex++;
+          // Pause before start typing
+          typeSpeed = 500;
+        }
+
+        setTimeout(() => this.type(), typeSpeed);
+      }
+    }
+    // Init App
+    function init() {
+      const txtElement = document.querySelector('.typewriter');
+      const words = JSON.parse(txtElement.getAttribute('data-words'));
+      const wait = txtElement.getAttribute('data-wait');
+      // Init TypeWriter
+      new TypeWriter(txtElement, words, wait);
+    }
+    // Init On DOM Load
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
   <script src="script.js"></script>
 </body>
 
