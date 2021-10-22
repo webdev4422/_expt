@@ -169,7 +169,12 @@
     // Init On DOM Load
     document.addEventListener('DOMContentLoaded', init);
   </script>
-  <script src="script.js"></script>
+
+  <script type="module">
+    import { hi } from "./script.js";
+    // hi()
+  </script>
+  <script type="module" src="script.js"></script>
 </body>
 
 </html>
