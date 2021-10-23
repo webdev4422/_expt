@@ -10,7 +10,7 @@
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
       // "program": "${workspaceFolder}/freecodecamp.org/JS-Algorithms-and-Data-Structures.js"
-      "program": "${workspaceFolder}/src/index.html"
+      "program": "${workspaceFolder}/src/js/script.js"
     }
   ]
 }
