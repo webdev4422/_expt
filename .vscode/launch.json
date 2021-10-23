@@ -8,10 +8,9 @@
       "type": "pwa-node",
       "request": "launch",
       "name": "Launch Program",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/freecodecamp.org/JS-Algorithms-and-Data-Structures.js"
+      "skipFiles": ["<node_internals>/**"],
+      // "program": "${workspaceFolder}/freecodecamp.org/JS-Algorithms-and-Data-Structures.js"
+      "program": "${workspaceFolder}/src/index.html"
     }
   ]
 }
