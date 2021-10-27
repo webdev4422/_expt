@@ -1,3 +1,6 @@
+// import { hi } from './script2.js'
+// export { hi }
+
 // ES6 Class
 class TypeWriter {
   constructor(txtElement, words, wait = 3000) {
@@ -48,7 +51,6 @@ class TypeWriter {
       // Pause before start typing
       typeSpeed = 500
     }
-
     setTimeout(() => this.type(), typeSpeed)
   }
 }
@@ -57,13 +59,25 @@ function init() {
   const txtElement = document.querySelector('.typewriter')
   const preWords = txtElement.getAttribute('data-words').replace(/'/gi, '"')
   const words = JSON.parse(preWords)
-  const words = JSON.parse(txtElement.getAttribute('data-words'))
   const wait = txtElement.getAttribute('data-wait')
+  // Add cursor
+  const cursor = document.createElement('style')
+  cursor.type = 'text/css'
+  cursor.innerHTML =
+    '.typewriter > .txt {border-right: 0.05em solid; animation: caret 1s steps(1) infinite;} @keyframes caret {50% {border-color: transparent;}} '
+  document.body.appendChild(cursor)
   // Init TypeWriter
   new TypeWriter(txtElement, words, wait)
 }
+init()
 // Init On DOM Load
-document.addEventListener('DOMContentLoaded', init)
+// document.addEventListener('DOMContentLoaded', init)
 
-// import { hi } from './script2.js'
-// export { hi }
+// Navigation menu
+const menu = document.querySelector('.menu')
+const navLinks = document.querySelector('.nav-links')
+function showMenu() {
+  menu.classList.toggle('show-menu')
+  navLinks.classList.toggle('show-nav-links')
+}
+menu.addEventListener('click', showMenu, false)

@@ -7,40 +7,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Test Doc</title>
   <link rel="stylesheet" type="text/css" href="/src/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/src/css/mobile-menu.css">
+  <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+  <!-- <link rel="stylesheet" type="text/css" href="/src/css/tailwind.css"> -->
   </link>
   <style>
-    body {
-      background: #202020;
+    /* body {
+      background: tan;
     }
 
     .heading {
       margin: 3rem 1rem;
       color: white;
-    }
-
-    /* Cursor */
-    .typewriter>.txt {
-      border-right: .05em solid;
-      animation: caret 1s steps(1) infinite;
-    }
-
-    @keyframes caret {
-      50% {
-        border-color: transparent;
-      }
-    }
+    } */
   </style>
 </head>
 
 <body>
-  <div class="content">
+  <div class="root">
+
     <header class="header">
-      <nav class="nav"></nav>
+      <div class="logo"></div>
+
+
+      <nav class="nav">
+        <div class="nav-menu">
+          <!-- <a class="menu-show" href="#">&equiv;</a> -->
+          <a class="" href="#">
+            <div class="menu">
+              <div class="menu-line"></div>
+              <div class="menu-line"></div>
+              <div class="menu-line"></div>
+            </div>
+            <!-- Tailwind
+            <div class="menu-show  w-12 h-12 p-1 hover:menu-animation">
+              <div class="menu-line menu-animation"></div>
+              <div class="menu-line menu-animation"></div>
+              <div class="menu-line menu-animation"></div>
+            </div> -->
+          </a>
+        </div>
+        <div class="nav-links">
+          <ul>
+            <li><a class="nav-link" href="#">Home</a></li>
+            <li><a class="nav-link" href="#">About</a></li>
+            <li><a class="nav-link" href="#">Clients</a></li>
+            <li><a class="nav-link" href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
+
+
+
 
     <main class="main">
       <div class="container">
-
 
         <h1 class="heading response typewriter" data-wait="1000"
           data-words="['Вітання!', 'Greetings!', 'Les salutations!', 'Grüße!', 'Saluti!', '问候！', 'Приветствие!', '!سلام تحية', 'Saluto!', 'Salutació!', '!דְרִישַׁת שָׁלוֹם', 'Salom!', '¡Saludo!', 'ຊົມເຊີຍ!', '挨拶！', 'გამარჯობა!', 'Powitanie!', 'Beannacht!', 'Hilsen!', 'Hälsning!', 'Мэндчилгээ!', 'Pozdrav!', 'Üdvözlet!', 'Salut!', 'Sveikinu!', 'Salam!', 'Salutem!', 'تبریک!', 'Saudações!', 'Lep pozdrav!', 'S pozdravom!', 'Kwaziso!', 'Salaan!', 'Χαιρετισμός!', 'Salamlayıram!', 'Поздрав!', 'Aloha!', 'शुभकामना!', 'Kveðja!', 'Прывітанне!']">
@@ -94,8 +116,11 @@
     </main>
     <footer class="footer"></footer>
   </div>
+  <script>
+
+  </script>
   <script async defer src="/src/js/script.js"></script>
-  <script type="module" src="/src/js/script2.js"></script>
+  <!-- <script type="module" src="/src/js/script2.js"></script> -->
   <!-- <script src="/src/js/index.js"></script> -->
 </body>
 
