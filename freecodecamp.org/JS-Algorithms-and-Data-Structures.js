@@ -798,7 +798,13 @@
 
 //Truncate a String
 //
-function truncateString(str, num) {
-  return str
-}
-truncateString('A-tisket a-tasket A green and yellow basket', 8)
+// function truncateString(str, num) {
+//   if (str.length <= num ) {
+//     return str
+//   } else {
+//     str = str.slice(0, num) + '...'
+//     console.log(str)
+//     return str
+//   }
+// }
+// truncateString('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length)
