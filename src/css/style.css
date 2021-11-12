@@ -7,6 +7,37 @@ Generate palette http://paletton.com/#uid=23R220k7VcJbLlSa8hB5D6X6m3x
 /* import google fonts: "Roboto" */
 /* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
 
+/*
+ Importing fonts from google cdn take less file sizes
+@font-face {
+  font-family: 'Rampart One';
+  src: url('/src/fonts/RampartOne-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satisfy';
+  src: url('/src/fonts/Satisfy-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Kalam';
+  src: url('/src/fonts/Kalam-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/src/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+} */
+
+
 /* Inject Tailwindcss */
 @tailwind base;
 @tailwind components;
