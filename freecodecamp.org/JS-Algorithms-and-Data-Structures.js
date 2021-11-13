@@ -808,3 +808,30 @@
 //   }
 // }
 // truncateString('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length)
+
+//Finders Keepers
+//
+// function findElement(arr, func) {
+//   for (let i = 0; i < arr.length; i++) {
+//     const num = arr[i]
+//     if (func(num) === true) {
+//       // console.log(num + ' OO  K K\nO  O KK\n 00  K K')
+//       console.log(num)
+//       return num
+//     }
+//   }
+//   console.log(undefined)
+//   return undefined
+// }
+// findElement([1, 2, 3, 4], (num) => num % 2 === 0)
+
+//Boo who
+//
+// Check if a value is classified as a boolean primitive.
+// function booWho(bool) {
+//   if (typeof bool === 'boolean') {
+//     return true
+//   }
+//   return false
+// }
+// booWho(null )
