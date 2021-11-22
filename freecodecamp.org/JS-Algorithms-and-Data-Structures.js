@@ -835,3 +835,24 @@
 //   return false
 // }
 // booWho(null )
+
+// Title Case a Sentence
+//
+// function titleCase(str) {
+//   let arrX = str.toLowerCase().split(' ')
+//   let arrY = []
+//   // console.log(arrX)
+//   for (let i = 0; i < arrX.length; i++) {
+//     let el = arrX[i].replace(arrX[i][0], arrX[i][0].toUpperCase())
+//     // console.log(el)
+//     arrY.push(el)
+//   }
+//   // console.log(arrY)
+//   str = arrY.join(' ')
+//   // console.log(str)
+//   return str
+// }
+// titleCase("I'm a little tea pot sHoRt AnD sToUt")
+
+// Slice and Splice
+//
