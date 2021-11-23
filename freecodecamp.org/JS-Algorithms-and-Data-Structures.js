@@ -856,3 +856,71 @@
 
 // Slice and Splice
 //
+// function frankenSplice(arr1, arr2, n) {
+//   let arrBeforeIndex = []
+//   let arrAfterIndex = []
+//   let arrResult = []
+
+//   if (n > 0) {
+//     for (let i = 0; i < n; i++) {
+//       arrBeforeIndex.push(arr2[i])
+//     }
+//   }
+//   console.log(arrBeforeIndex)
+
+//   for (let i = n; i < arr2.length; i++) {
+//     arrAfterIndex.push(arr2[i])
+//   }
+//   console.log(arrAfterIndex)
+
+//   arrResult = arrBeforeIndex.concat(arr1, arrAfterIndex)
+//   console.log(arrResult)
+
+//   return arrResult
+// }
+// frankenSplice(['claw', 'tentacle'], ['head', 'shoulders', 'knees', 'toes'], 2)
+//should return ["head", "shoulders", "claw", "tentacle", "knees", "toes"].
+//freecodecamp solution
+// let localArray = arr2.slice()
+// for (let i = 0; i < arr1.length; i++) {
+//   localArray.splice(n, 0, arr1[i])
+//   n++
+// }
+// console.log(localArray)
+// return localArray
+
+// Falsy Bouncer
+//
+// function bouncer(arr) {
+//   let arrX = []
+//   for (let i = 0; i < arr.length; i++) {
+//     if (!arr[i] === false || null || 0 || '' || undefined || NaN) {
+//       arrX.push(arr[i])
+//     }
+//   }
+//   console.log(arrX)
+//   return arrX
+// }
+// bouncer([7, 'ate', '', false, 9, NaN, undefined])
+
+// Where do I Belong
+//
+// function getIndexToIns(arr, num) {
+//   arr.sort((a, b) => a - b) // compareFunction to sort numerically. By default sort() do alphabetical sorting.
+//   console.log(arr)
+//   if (arr.length === 0) {
+//     console.log(0)
+//     return 0
+//   }
+//   if (num > arr[arr.length - 1]) {
+//     console.log(arr.length)
+//     return arr.length
+//   }
+//   for (let i = 0; i < arr.length; i++) {
+//     if (num <= arr[i]) {
+//       console.log(arr.indexOf(arr[i]))
+//       return arr.indexOf(arr[i])
+//     }
+//   }
+// }
+// getIndexToIns([], 1) //should return 0.
