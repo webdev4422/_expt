@@ -931,3 +931,40 @@
 //   return arr.length
 // }
 // getIndexToIns([], 1) //should return 0.
+
+// Mutations
+//
+// function mutation(arr) {
+//   let regex = []
+//   for (let i = 0; i < arr[1].length; i++) {
+//     regex.push(new RegExp('[' + arr[1][i] + ']', 'i'))
+//   }
+//   console.log(regex)
+
+//   let testStr = arr[0]
+//   let test
+//   for (let i = 0; i < regex.length; i++) {
+//     test = regex[i].test(testStr)
+//     if (test === false) {
+//       console.log(test)
+//       return test
+//     }
+//   }
+
+//   console.log(test)
+//   return test
+// }
+// mutation(['hello', 'hey'])
+
+// Chunky Monkey
+//
+// function chunkArrayInGroups(arr, size) {
+//   let splitArr = []
+//   for (let i = 0; i < arr.length; i += size) {
+//     splitArr.push(arr.slice(i, i + size))
+// i += size - 1
+//   }
+//   console.log(splitArr)
+//   return splitArr
+// }
+// chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3) //should return [[0, 1, 2], [3, 4, 5]]
