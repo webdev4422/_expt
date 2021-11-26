@@ -968,3 +968,172 @@
 //   return splitArr
 // }
 // chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3) //should return [[0, 1, 2], [3, 4, 5]]
+
+//
+/////////////////////////////////////////////
+//
+// Object Oriented Programming
+//
+////////////////////////////////////////////
+//
+
+// function Bird(name, color) {
+//   this.name = name
+//   this.color = color
+//   this.numLegs = 2
+// }
+// // Bird.name = "test"
+// let newBird = new Bird()
+// let newBird2 = new Bird()
+// console.log(newBird2.numLegs)
+
+// Iterate Over All Properties
+//
+// function Bird(name) {
+//   this.name = name //own property
+// }
+// Bird.prototype.numLegs = 2 // prototype property
+// let duck = new Bird('Donald')
+// let ownProps = []
+// let prototypeProps = []
+// for (let property in duck) {
+//   if (duck.hasOwnProperty(property)) {
+//     ownProps.push(property)
+//   } else {
+//     prototypeProps.push(property)
+//   }
+// }
+// console.log(ownProps)
+// console.log(prototypeProps)
+// Bird.prototype.numLegs = 2
+// Bird.prototype.eat = function () {
+//   console.log('nom nom nom')
+// }
+// let duck = new Bird('Donald')
+// duck.eat()
+
+// Understand the Prototype Chain
+//
+// function Dog(name) {
+//   this.name = name
+// }
+// let beagle = new Dog('Snoopy')
+// Dog.prototype.isPrototypeOf(beagle) // yields true
+// Object.prototype.isPrototypeOf(Dog.prototype)
+
+// Use Inheritance So You Don't Repeat Yourself
+// function Animal() {}
+// Animal.prototype = {
+//   constructor: Animal,
+//   describe: function () {
+//     console.log('My name is ' + this.name)
+//   },
+// }
+// Bird.prototype = {
+//   constructor: Bird,
+// }
+// Dog.prototype = {
+//   constructor: Dog,
+// }
+
+// Use a Mixin to Add Common Behavior Between Unrelated Objects
+//
+// let flyMixin = function (obj) {
+//   obj.fly = function () {
+//     console.log('Flying, wooosh!')
+//   }
+// }
+// let bird = {
+//   name: 'Donald',
+//   numLegs: 2,
+// }
+// let plane = {
+//   model: '777',
+//   numPassengers: 524,
+// }
+// flyMixin(bird)
+// flyMixin(plane)
+// bird.fly()
+// plane.fly()
+
+//
+/////////////////////////////////////////////
+//
+// Functional Programming
+//
+////////////////////////////////////////////
+//
+
+// Understand the Hazards of Using Imperative Code
+//
+// // tabs is an array of titles of each site open within the window
+// const Window = function (tabs) {
+//   this.tabs = tabs // We keep a record of the array inside the object
+// }
+// // When you join two windows into one window
+// Window.prototype.join = function (otherWindow) {
+//   this.tabs = this.tabs.concat(otherWindow.tabs)
+//   return this
+// }
+// // When you open a new tab at the end
+// Window.prototype.tabOpen = function (tab) {
+//   this.tabs.push('new tab') // Let's open a new tab for now
+//   return this
+// }
+// // When you close a tab
+// Window.prototype.tabClose = function (index) {
+//   // Only change code below this line
+//   this.tabs.splice(index, 1) // Remove tab
+//   // const tabsBeforeIndex = this.tabs.splice(index, 1) // Get the tabs before the tab
+//   // const tabsAfterIndex = this.tabs.splice(index, 1) // Get the tabs after the tab
+//   // this.tabs = tabsBeforeIndex.concat(tabsAfterIndex) // Join them together
+//   // Only change code above this line
+//   return this
+// }
+// // Let's create three browser windows
+// const workWindow = new Window(['GMail', 'Inbox', 'Work mail', 'Docs', 'freeCodeCamp']) // Your mailbox, drive, and other work sites
+// const socialWindow = new Window(['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium']) // Social sites
+// const videoWindow = new Window(['Netflix', 'YouTube', 'Vimeo', 'Vine']) // Entertainment sites
+// // Now perform the tab opening, closing, and other operations
+// const finalTabs = socialWindow
+//   .tabOpen() // Open a new tab for cat memes
+//   .join(videoWindow.tabClose(2)) // Close third tab in video window, and join
+//   .join(workWindow.tabClose(1).tabOpen())
+// console.log(finalTabs.tabs)
+
+// Refactor Global Variables Out of Functions
+//
+// The global variable
+// const bookList = [
+//   'The Hound of the Baskervilles',
+//   'On The Electrodynamics of Moving Bodies',
+//   'Philosophiæ Naturalis Principia Mathematica',
+//   'Disquisitiones Arithmeticae',
+// ]
+// // Change code below this line
+// let addedBookList = []
+// function add(bookArray, bookName) {
+//   addedBookList = [...bookArray]
+//   addedBookList.push(bookName)
+//   return addedBookList
+
+//   // Change code above this line
+// }
+// // Change code below this line
+// let removedBookList = []
+// function remove(bookList, bookName) {
+//   removedBookList = [...bookList]
+//   const book_index = removedBookList.indexOf(bookName)
+//   if (book_index >= 0) {
+//     removedBookList.splice(book_index, 1)
+//     return removedBookList
+
+//     // Change code above this line
+//   }
+// }
+// const newBookList = add(bookList, 'A Brief History of Time')
+// const newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies')
+// const newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies')
+// console.log(bookList)
+// console.log(newBookList)
+// console.log(newerBookList)
