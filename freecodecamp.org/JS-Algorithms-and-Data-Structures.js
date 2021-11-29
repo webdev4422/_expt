@@ -1064,6 +1064,29 @@
 ////////////////////////////////////////////
 //
 
+// Understand Functional Programming TerminologyPassed
+//
+// // Function that returns a string representing a cup of green tea
+// const prepareGreenTea = () => 'greenTea'
+// // Function that returns a string representing a cup of black tea
+// const prepareBlackTea = () => 'blackTea'
+// /*
+// Given a function (representing the tea type) and number of cups needed, the following function returns an array of strings (each representing a cup of a specific type of tea).
+// */
+// const getTea = (prepareTea, numOfCups) => {
+//   const teaCups = []
+//   for (let cups = 1; cups <= numOfCups; cups += 1) {
+//     const teaCup = prepareTea()
+//     teaCups.push(teaCup)
+//   }
+//   return teaCups
+// }
+// // Only change code below this line
+// const tea4GreenTeamFCC = getTea(prepareGreenTea, 27)
+// const tea4BlackTeamFCC = getTea(prepareBlackTea, 13)
+// // Only change code above this line
+// console.log(tea4GreenTeamFCC, tea4BlackTeamFCC)
+
 // Understand the Hazards of Using Imperative Code
 //
 // // tabs is an array of titles of each site open within the window
@@ -1101,6 +1124,18 @@
 //   .join(workWindow.tabClose(1).tabOpen())
 // console.log(finalTabs.tabs)
 
+// Pass Arguments to Avoid External Dependence in a Function
+//
+// // The global variable
+// let fixedValue = 4
+// // Only change code below this line
+// function incrementer(value) {
+//   let newValue
+//   newValue = value + 1
+//   return newValue
+//   // Only change code above this line
+// }
+
 // Refactor Global Variables Out of Functions
 //
 // The global variable
@@ -1137,3 +1172,42 @@
 // console.log(bookList)
 // console.log(newBookList)
 // console.log(newerBookList)
+
+// Use the map Method to Extract Data from an Array
+//
+// const watchList = [
+//   { Title: 'Inception', Year: '2010' },
+//   { Title: 'Interstellar', Year: '2014' },
+//   { Title: 'The Dark Knight', Year: '2008' },
+//   { Title: 'Batman Begins', Year: '2005' },
+//   { Title: 'Avatar', Year: '2009' },
+// ]
+// const ratings = watchList.map((obj) => {
+//   let newObj = {}
+//   newObj['title'] = obj.Title
+//   newObj['year'] = obj.Year
+//   return newObj
+// })
+// console.log(ratings)
+
+// Implement map on a Prototype
+//
+// // The global variable
+// const s = [23, 65, 98, 5]
+// Array.prototype.myMap = function (callback) {
+//   const newArray = []
+//   // Only change code below this line
+//   for (let i = 0; i < this.length; i++) {
+//     // newArray[i] = this[i]
+//     // newArray[i] = newArray[i] * 2 // Wrong!
+//     // newArray.push(this[i])
+//     // newArray[i] = callback(this[i])
+//     newArray.push(callback(this[i]))
+//   }
+//   // Only change code above this line
+//   return newArray
+// }
+// const new_s = s.myMap(function (item) {
+//   return item * 2
+// })
+// console.log(new_s)
