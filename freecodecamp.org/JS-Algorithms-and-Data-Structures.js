@@ -1211,3 +1211,154 @@
 //   return item * 2
 // })
 // console.log(new_s)
+
+// Use the filter Method to Extract Data from an Array
+//
+// The global variable
+// const watchList = [
+//   {
+//     Title: 'Inception',
+//     Year: '2010',
+//     imdbRating: '8.8',
+//   },
+//   {
+//     Title: 'Interstellar',
+//     Year: '2014',
+//     imdbRating: '8.6',
+//   },
+//   {
+//     Title: 'The Dark Knight',
+//     Year: '2008',
+//     imdbRating: '9.0',
+//   },
+//   {
+//     Title: 'Batman Begins',
+//     Year: '2005',
+//     imdbRating: '8.3',
+//   },
+//   {
+//     Title: 'Avatar',
+//     Year: '2009',
+//     imdbRating: '7.9',
+//   },
+// ]
+// With for loop
+// Only change code below this line
+// function myFunc(value) {
+//   const tempArray = [...value]
+//   const newArray = []
+//   for (let i = 0; i < tempArray.length; i++) {
+//     let obj = tempArray[i]
+//     if (obj.imdbRating >= 8) {
+//       newArray.push(obj)
+//     }
+//   }
+//   return newArray
+// }
+// Without for loop
+// const filteredList = watchList
+//   .map((obj) => {
+//     let newObj = {}
+//     newObj['title'] = obj.Title
+//     // newObj['rating'] = Number(obj.imdbRating)
+//     newObj['rating'] = obj.imdbRating
+//     return newObj
+//   })
+//   .filter((obj) => obj.rating >= 8)
+// // Only change code above this line
+// console.log(watchList)
+// console.log(filteredList)
+
+// Implement the filter Method on a Prototype
+//
+// // The global variable
+// const s = [23, 65, 98, 5]
+// Array.prototype.myFilter = function (callback) {
+//   // Only change code below this line
+//   const newArray = []
+//   for (let i = 0; i < this.length; i++) {
+//     if (callback(this[i])) {
+//       newArray.push(this[i])
+//     }
+//   }
+//   // Only change code above this line
+//   return newArray
+// }
+// const new_s = s.myFilter(function (item) {
+//   return item % 2 === 1
+// })
+// console.log(new_s)
+
+// Return Part of an Array Using the slice Method
+//
+// function sliceArray(anim, beginSlice, endSlice) {
+//   // Only change code below this line
+//   const newArr = anim.slice(beginSlice, endSlice)
+//   return newArr
+//   // Only change code above this line
+// }
+// const inputAnim = ['Cat', 'Dog', 'Tiger', 'Zebra', 'Ant']
+// sliceArray(inputAnim, 1, 3)
+
+// Remove Elements from an Array Using slice Instead of splice
+//
+// function nonMutatingSplice(cities) {
+//   return cities.slice(0, 3)
+// }
+// const inputCities = ['Chicago', 'Delhi', 'Islamabad', 'London', 'Berlin']
+// nonMutatingSplice(inputCities)
+
+// Combine Two Arrays Using the concat Method
+//
+// function nonMutatingConcat(original, attach) {
+//   return original.concat(attach)
+// }
+// const first = [1, 2, 3]
+// const second = [4, 5]
+// nonMutatingConcat(first, second)
+
+// Use the filter Method to Extract Data from an Array
+//
+// const watchList = [
+//   {
+//     Title: 'Inception',
+//     Director: 'Christopher Nolan',
+//     imdbRating: '8.8',
+//   },
+//   {
+//     Title: 'Interstellar',
+//     Director: 'Christopher Nolan',
+//     imdbRating: '8.6',
+//   },
+//   {
+//     Title: 'The Dark Knight',
+//     Director: 'Christopher Nolan',
+//     imdbRating: '9.0',
+//   },
+//   {
+//     Title: 'Batman Begins',
+//     Director: 'Christopher Nolan',
+//     imdbRating: '8.3',
+//   },
+//   {
+//     Title: 'Avatar',
+//     Director: 'James Cameron',
+//     imdbRating: '7.9',
+//   },
+// ]
+// function getRating(watchList) {
+//   let averageRating = watchList
+//     .filter((obj) => obj.Director === 'Christopher Nolan')
+//     .map((obj) => {
+//       let newObj = {}
+//       newObj['rating'] = Number(obj.imdbRating)
+//       return newObj
+//     })
+//   averageRating =
+//     averageRating.reduce((previous, current, index, array) => {
+//       return previous + current.rating
+//     }, 0) / averageRating.length
+
+//   return averageRating
+// }
+// console.log(getRating(watchList))
