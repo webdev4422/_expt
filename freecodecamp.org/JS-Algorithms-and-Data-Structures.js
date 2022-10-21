@@ -1848,3 +1848,210 @@ Hints on https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-make-a-pe
 //   return arrNew
 // }
 // console.log(orbitalPeriod([{ name: "sputnik", avgAlt: 35873.5553 }]))
+
+
+
+/******************************************************************************/
+// JavaScript Algorithms and Data Structures Projects 
+/******************************************************************************/
+
+// Palindrome Checker
+/******************************************************************************/
+// function palindrome(str) {
+//   let reverseStr = ''
+//   str = str.toLowerCase().replace(/[\W_]/g, '')
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     reverseStr += str[i]
+//   }
+//   if (str == reverseStr) {
+//     return true
+//   }
+//   return false
+// }
+// console.log(palindrome("0_0 (: /-\ :) 1 eye   eye. 10-0"))
+
+// Roman Numeral Converter
+/******************************************************************************/
+// function convertToRoman(num) {
+//   // Mapping object: Arabic numerals to Roman numerals
+//   const romanNumerals = {
+//     '1s': { 0: '', 1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI', 7: 'VII', 8: 'VIII', 9: 'IX' },
+//     '10s': { 0: '', 1: 'X', 2: 'XX', 3: 'XXX', 4: 'XL', 5: 'L', 6: 'LX', 7: 'LXX', 8: 'LXXX', 9: 'XC' },
+//     '100s': { 0: '', 1: 'C', 2: 'CC', 3: 'CCC', 4: 'CD', 5: 'D', 6: 'DC', 7: 'DCC', 8: 'DCCC', 9: 'CM' },
+//     '1000s': { 0: '', 1: 'M', 2: 'MM', 3: 'MMM', 4: 'M_V', 5: '_V', 6: '_VM', 7: '_VMM', 8: '_VMMM', 9: 'M_X' },
+//     '10000s': { 0: '', 1: '_X', 2: '_X_X', 3: '_X_X_X', 4: '_X_L', 5: '_L', 6: '_L_X', 7: '_L_X_X', 8: '_L_X_X_X', 9: '_X_C' },
+//     '100000s': { 0: '', 1: '_C', 2: '_C_C', 3: '_C_C_C', 4: '_C_D', 5: '_D', 6: '_D_C', 7: '_D_C_C', 8: '_D_C_C_C', 9: '_C_M' },
+//     '1000000s': { 0: '', 1: '_M', 2: '_M_M', 3: '_M_M_M', 4: '_M?', 5: '?', 6: '?_M', 7: '?_M_M', 8: '?_M_M_M', 9: '_M!?' },
+//   }
+//   let arrNums = []
+//   let arrNumsRoman = []
+
+//   // Separate number into 1s, 10s, 100s, 1000s...
+//   arrNums = num.toString().split('').map((el,) => Number(el)).reverse()
+//   console.log(arrNums)
+
+//   // Enumarate object keys to use in iterator
+//   let keys = Object.keys(romanNumerals)
+//   console.log(keys)
+
+//   // Map arabic to roman
+//   for (let i = 0; i < arrNums.length; i++) {
+//     arrNumsRoman.push(romanNumerals[keys[i]][arrNums[i]])
+//   }
+//   console.log(arrNumsRoman)
+
+//   num = arrNumsRoman.reverse().join('')
+//   return num
+// }
+// console.log(convertToRoman(1525)) /*1525 = MDXXV*/
+
+// Caesars Cipher
+/******************************************************************************/
+// function rot13(str) {
+//   const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ'
+//   let strNew = ''
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i].match(/[A-Z]/)) {
+//       let index = Number(alphabet.indexOf(str[i])) + 13
+//       strNew += str[i].replace(str[i], alphabet.charAt(index))
+//     } else {
+//       strNew += str[i]
+//     }
+//   }
+//   return strNew
+// }
+// console.log(rotk13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT."))
+
+// Telephone Number Validator
+/******************************************************************************/
+// function telephoneCheck(str) {
+//   if (str.match(/\d/g).length == 11 && str.match(/^1/g) || str.match(/\d/g).length == 10) {
+//     if (str.match(/\(\d{10}\)/) || str.match(/\(\d{3}-\d{3}-\d{4}/) || str.match(/\d\s\d{3}\)\d{3}-\d{4}/)) {
+//       return false
+//     } else if (str.match(/\d{10}/) || str.match(/\d{3}-\d{3}-\d{4}/) || str.match(/\(\d{3}\)\d{3}-\d{4}/) || str.match(/\d(\s|\(|\s\()\d{3}(\)|-|\s|\)\s)\d{3}(-|\s)/)) {
+//       return true
+//     }
+//   }
+//   return false
+// }
+// Alternative
+// function telephoneCheck(str) {
+//   const rgx = /^(1\s|1)?(\(\d{3}\)|\d{3})(-|\s)?\d{3}(-|\s)?\d{4}$/
+//   return rgx.test(str)
+// }
+// Alternative
+// function telephoneCheck(str) {
+//   let result = false
+//   let formats = [
+//     /^\d\d\d\d\d\d\d\d\d\d$/,			    // 5555555555
+//     /^\d\d\d-\d\d\d-\d\d\d\d/,			    // 555-555-5555
+//     /^\d\d\d\s\d\d\d\s\d\d\d\d/,		    // 555 555 5555
+//     /^\(\d\d\d\)\d\d\d-\d\d\d\d/,		  // (555)555-5555
+//     /^\(\d\d\d\)\s\d\d\d-\d\d\d\d/,		// (555) 555-5555
+//     /^1\d\d\d\d\d\d\d\d\d\d/,			    // 15555555555
+//     /^1\s\d\d\d\s\d\d\d\s\d\d\d\d/,		// 1 555 555 5555
+//     /^1\s\d\d\d-\d\d\d-\d\d\d\d/,		  // 1 555-555-5555
+//     /^1\(\d\d\d\)\d\d\d-\d\d\d\d/,		  // 1(555)555-5555
+//     /^1\s\(\d\d\d\)\s\d\d\d-\d\d\d\d/	// 1 (555) 555-5555
+//   ]
+//   result = formats.some(rgx => rgx.test(str))
+//   return result
+// }
+// // True
+// console.log(telephoneCheck("5555555555")) // true
+// console.log(telephoneCheck("555-555-5555")) // true
+// console.log(telephoneCheck("(555)555-5555")) // true
+// console.log(telephoneCheck("1(555)555-5555")) // true
+// console.log(telephoneCheck("1 (555) 555-5555")) // true
+// console.log(telephoneCheck("1 555-555-5555")) // true
+// console.log(telephoneCheck("1 555 555 5555")) // true
+// console.log(telephoneCheck("1 456 789 4444")) // true
+// // False
+// console.log(telephoneCheck("1 555)555-5555")) // false
+// console.log(telephoneCheck("(555-555-5555")) // false
+// console.log(telephoneCheck("555)-555-5555")) // false
+// console.log(telephoneCheck("(555)5(55?)-5555")) // false
+// console.log(telephoneCheck("55 55-55-555-5")) // false
+// console.log(telephoneCheck("123**&!!asdf#")) // false
+// console.log(telephoneCheck("5555555")) // false
+// console.log(telephoneCheck("55555555")) // false
+// console.log(telephoneCheck("555-5555")) // false
+// console.log(telephoneCheck("11 555-555-5555")) // false
+// console.log(telephoneCheck("10 (757) 622-7382")) // false
+// console.log(telephoneCheck("(6054756961)")) // false
+// console.log(telephoneCheck("2 (757) 622-7382")) // false
+// console.log(telephoneCheck("0 (757) 622-7382")) // false
+// console.log(telephoneCheck("-1 (757) 622-7382")) // false
+// console.log(telephoneCheck("2 757 622-7382")) // false
+// console.log(telephoneCheck("27576227382")) // false
+// console.log(telephoneCheck("(275)76227382")) // false
+// console.log(telephoneCheck("2(757)6227382")) // false
+// console.log(telephoneCheck("2(757)622-7382")) // false
+
+// Cash Register
+/******************************************************************************/
+/*
+  Currency Unit	             Amount         Example cash-in-drawer (cid)
+One-hundred Dollars	$100  (ONE HUNDRED)    [['ONE HUNDRED', 100],
+Twenty Dollars      $20   (TWENTY)          ['TWENTY', 60],
+Ten Dollars	        $10   (TEN)             ['TEN', 20],
+Five Dollars	      $5    (FIVE)            ['FIVE', 55],
+Dollar	            $1    (ONE)             ['ONE', 90],
+Quarter	            $0.25 (QUARTER)         ['QUARTER', 4.25],
+Dime	              $0.10 (DIME)            ['DIME', 3.1],
+Nickel	            $0.05 (NICKEL)          ['NICKEL', 2.05],
+Penny	              $0.01 (PENNY)           ['PENNY', 1.01]]
+Example: 96.74 = 20+20+20+20 + 10 + 5 + 1 + 0.25+0.25 + 0.10+0.10 + 0.01+0.01+0.01+0.01
+Example: 96.74 - 60 => 36.74 - 20 => 16.74 - 15 => 1.74 - 1 => 0.74 - 0.50 => 0.24 - 0.20 => 0.04 - 0.04 => 0
+*/
+// function checkCashRegister(price, cash, cid) {
+//   let currency = [['ONE HUNDRED', 100], ['TWENTY', 20], ['TEN', 10], ['FIVE', 5], ['ONE', 1], ['QUARTER', 0.25], ['DIME', 0.10], ['NICKEL', 0.05], ['PENNY', 0.01]]
+//   let cidSum = 0 // Total cash in cid
+//   let change = cash - price // Withdraw amount
+//   // console.log(change)
+
+//   for (let i = 0; i < cid.length; i++) {
+//     cidSum += cid[i][1]
+//   }
+//   // console.log(cidSum)
+
+//   if (change > cidSum) {
+//     /* INSUFFICIENT: return empty array [], meaning: unable to change */
+//     return { status: 'INSUFFICIENT_FUNDS', change: [] }
+//   } else if (change == cidSum) {
+//     /* CLOSED: return cid, meaning: changing, no money left */
+//     return { status: 'CLOSED', change: cid }
+//   } else if (change < cidSum) {
+//     /* OPEN: return exact change from cid, from high to low, meaning: able to change, ready for new change*/
+//     cid = cid.reverse() // Check from big to small cid items
+
+//     // Check if withdraw cash currency is available in cid
+//     for (let i = 0; i < currency.length; i++) {
+//       if (cid[i][1] / currency[i][1] < 1) {
+//         console.log('OK')
+//         return { status: 'INSUFFICIENT_FUNDS', change: [] }
+//       }
+//     }
+
+//     // Create new withdraw array
+//     let withdraw = [] // Withdraw array
+//     // cid = cid.reverse() // Check from big to small cid items
+//     for (let i = 0; i < currency.length; i++) {
+//       if (change > cid[i][1]) { // Check if change greater than cid item
+//         change = Number((change - cid[i][1]).toFixed(2)) // Subtract cid from change; 
+//         withdraw.push(cid[i]) // Push this cid item to new array
+//       } else if (change < cid[i][1] && Math.floor(change / currency[i][1]) > 0) { // Check if change less than currency item
+//         cid[i][1] = ((Math.floor(change / currency[i][1])) * currency[i][1]) // Check how many currency items is available inside change value
+//         change = Number((change - cid[i][1]).toFixed(2)) // Number((...)toFixed(2)) -> normalize JS number
+//         withdraw.push(cid[i])
+//       }
+//     }
+//     return { status: 'OPEN', change: withdraw }
+//   }
+// }
+// console.log(checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])) // should return {status: "OPEN", change: [["QUARTER", 0.5]]}.
+// console.log(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])) // should return {status: "OPEN", change: [["TWENTY", 60], ["TEN", 20], ["FIVE", 15], ["ONE", 1], ["QUARTER", 0.5], ["DIME", 0.2], ["PENNY", 0.04]]}.
+// console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])) // should return {status: "INSUFFICIENT_FUNDS", change: []}.
+// console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])) // should return {status: "INSUFFICIENT_FUNDS", change: []}.
+// console.log(checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])) // should return {status: "CLOSED", change: [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]}.
+// console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]))// should return { status: "INSUFFICIENT_FUNDS", change: [] }.
