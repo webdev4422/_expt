@@ -38,9 +38,11 @@ Generate palette http://paletton.com/#uid=23R220k7VcJbLlSa8hB5D6X6m3x
 } */
 
 /* Inject Tailwindcss */
+/*
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+*/
 
 :root {
   /* Main Primary color */
@@ -266,6 +268,7 @@ p,h1,h2,h3,h4,h5,h6{overflow-wrap:break-word;}
 }
 
 /* Tailwind */
+/*
 @layer components {
   .menu-line {
     @apply min-w-max h-1 m-1.5 bg-black rounded-full;
@@ -276,3 +279,4 @@ p,h1,h2,h3,h4,h5,h6{overflow-wrap:break-word;}
     }
   }
 }
+*/
