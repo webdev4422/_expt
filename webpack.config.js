@@ -18,7 +18,7 @@ module.exports = {
       new OptimizeCssAssetsPlugin(),
       new TerserPlugin(),
       new HtmlWebpackPlugin({
-        template: './src/index.html',
+        template: './index.html',
         minify: true,
       }),
       new CssMinimizerPlugin(),

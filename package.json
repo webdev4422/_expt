@@ -21,19 +21,18 @@
     "url": "https:/         /github.com/webdev4422/zzz-dev/issues"
   },
   "homepage": "https://github.com/webdev4422/zzz-dev#readme",
-  "packageManager": "yarn@3.0.2",
   "devDependencies": {
     "autoprefixer": "latest",
     "clean-webpack-plugin": "^4.0.0",
-    "css-loader": "^6.4.0",
-    "css-minimizer-webpack-plugin": "^3.1.1",
-    "html-webpack-plugin": "^5.4.0",
-    "mini-css-extract-plugin": "^2.4.3",
+    "css-loader": "^6.8.1",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "postcss": "latest",
     "tailwindcss": "latest",
-    "terser-webpack-plugin": "^5.2.4",
-    "webpack": "^5.59.1",
-    "webpack-cli": "^4.9.1"
+    "terser-webpack-plugin": "^5.3.9",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^4.10.0"
   }
 }
