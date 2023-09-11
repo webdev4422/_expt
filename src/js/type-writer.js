@@ -1,6 +1,3 @@
-// import { hi } from './script2.js'
-// export { hi }
-
 // ES6 Class
 class TypeWriter {
   constructor(txtElement, words, wait = 3000) {
@@ -72,12 +69,3 @@ function init() {
 init()
 // Init On DOM Load
 // document.addEventListener('DOMContentLoaded', init)
-
-// Navigation menu
-const menu = document.querySelector('.menu')
-const navLinks = document.querySelector('.nav-links')
-function showMenu() {
-  menu.classList.toggle('show-menu')
-  navLinks.classList.toggle('show-nav-links')
-}
-menu.addEventListener('click', showMenu, false)

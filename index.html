@@ -1,130 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Test Doc</title>
-  <link rel="stylesheet" type="text/css" href="/src/css/style.css">
-  <link rel="stylesheet" type="text/css" href="/src/css/mobile-menu.css">
-  <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
-  <!-- <link rel="stylesheet" type="text/css" href="/src/css/tailwind.css"> -->
-  </link>
-  <style>
-    .typewriter {
-      background: teal;
-      border: 0.5rem solid green;
-    }
-
-    .cssbattle {
-      background: tan;
-      width: 400px;
-      height: 300px;
-    }
-  </style>
-</head>
-
-<body class="body">
-  <header class="header">
-    <div class="logo">LOGO</div>
-
-    <nav class="nav">
-      <div class="menu">
-        <a class="" href="#">
-          <div class="menu-line"></div>
-          <div class="menu-line"></div>
-          <div class="menu-line"></div>
-        </a>
-      </div>
-      <div class="nav-links">
-        <a class="nav-link" href="#">Home</a>
-        <a class="nav-link" href="#">About</a>
-        <a class="nav-link" href="#">Clients</a>
-        <a class="nav-link" href="#">Contact Us</a>
-      </div>
-    </nav>
-  </header>
-
-  <main class="main">
-    <article class="article typewriter">
-      <div class=" container">
-
-        <h1 class="heading response typewriter" data-wait="1000"
-          data-words="['Вітання!', 'Greetings!', 'Les salutations!', 'Grüße!', 'Saluti!', '问候！', 'Приветствие!', '!سلام تحية', 'Saluto!', 'Salutació!', '!דְרִישַׁת שָׁלוֹם', 'Salom!', '¡Saludo!', 'ຊົມເຊີຍ!', '挨拶！', 'გამარჯობა!', 'Powitanie!', 'Beannacht!', 'Hilsen!', 'Hälsning!', 'Мэндчилгээ!', 'Pozdrav!', 'Üdvözlet!', 'Salut!', 'Sveikinu!', 'Salam!', 'Salutem!', 'تبریک!', 'Saudações!', 'Lep pozdrav!', 'S pozdravom!', 'Kwaziso!', 'Salaan!', 'Χαιρετισμός!', 'Salamlayıram!', 'Поздрав!', 'Aloha!', 'शुभकामना!', 'Kveðja!', 'Прывітанне!']">
-          Greetigns!
-        </h1>
-
-
-        <h2>Images</h2>
-        <!-- `img` element -->
-        <!-- <img class="image1" src="/src/img/mount1-300.jpg" alt="Test image"> -->
-
-        <!-- `img` element, `srcset` attribute -->
-        <!-- <img class="image2"
-            srcset="/src/img/mount1-300.jpg 300w, /src/img/mount1-480.jpg 480w, /src/img/mount1-1200.jpg 1200w"
-            sizes="(max-width: 320px) 300px, (max-width: 480px) 480px, (max-width: 1200px) 1200px"
-            src="/src/img/mount1.jpg" alt="Test image"> -->
-
-        <!-- `picture` and `source` elements, `srcset` attributes -->
-        <!-- <picture class="image3">
-            <source media="(max-width: 320px)" srcset="/src/img/mount1-300.jpg">
-            <source media="(max-width: 480px)" srcset="/src/img/mount1-480.jpg">
-            <source media="(max-width: 1200px)" srcset="/src/img/mount1-1200.jpg">
-            <source srcset="/src/img/mount1.webp" type="image/webp">
-            <img src="/src/img/mount1.jpg" alt="Test image">
-          </picture> -->
-
-
-        <hr class="hr">
-        <a class="link" href="">Test link</a>
-        <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil sit, reprehenderit dignissimos
-          quos incidunt fuga, quas, animi est odio maiores ut asperiores! Molestiae, alias? Quos corporis iusto ipsa
-          ducimus. Maxime sint animi officiis doloremque, recusandae asperiores adipisci beatae? Deserunt velit eveniet
-          maxime autem soluta illo, quo et corrupti non ad, blanditiis debitis atque!</p>
-        <hr class="hr">
-        <button class="button" onclick="testReq()">API request</button>
-        <hr class="hr">
-      </div>
-    </article>
-
-    <article class="article cssbattle">
-
-      <div class="Frame1"
-        style="width: 400px; height: 300px; position: relative; background: #293462; border-radius: 2px; overflow: hidden; border: 0.50px rgba(255, 255, 255, 0.10) solid">
-        <div class="Ellipse1"
-          style="width: 176px; height: 120px; left: 112px; top: 90px; position: absolute; background: #FE5F55; border-radius: 9999px">
-        </div>
-        <div class="Ellipse2"
-          style="width: 19px; height: 25px; left: 147px; top: 82px; position: absolute; background: #D9D9D9; border-radius: 9999px">
-        </div>
-        <div class="Ellipse3"
-          style="width: 19px; height: 25px; left: 230px; top: 82px; position: absolute; background: #D9D9D9; border-radius: 9999px">
-        </div>
-        <div class="Vector1"
-          style="width: 145.89px; height: 37px; left: 126.11px; top: 156px; position: absolute; border: 16.50px #A64942 solid">
-        </div>
-        <div class="Vector2"
-          style="width: 13px; height: 3px; left: 192px; top: 170px; position: absolute; border: 16.50px #A64942 solid">
-        </div>
-        <div class="Ellipse5"
-          style="width: 14px; height: 13px; left: 205px; top: 150px; position: absolute; background: #293462; border-radius: 9999px">
-        </div>
-        <div class="Ellipse4"
-          style="width: 14px; height: 13px; left: 166px; top: 150px; position: absolute; background: #293462; border-radius: 9999px">
-        </div>
-      </div>
-    </article>
-  </main>
-
-  <footer class="footer">
-    2022
-  </footer>
-
-  <script></script>
-  <script async defer src="/src/js/shadow-dom.js"></script>
-  <!-- <script type="module" src="/src/js/module.js"></script> -->
-  <!-- <script src="/src/js/index.js"></script> -->
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>Header</header>
+    <main>
+      <h1>Main</h1>
+      <ul>
+        <li><a href="API/">API/</a></li>
+        <li><a href="MDN/">MDN/</a></li>
+        <li><a href="Vue.js/">Vue.js/</a></li>
+        <li><a href="mobile-menu/">mobile-menu/</a></li>
+        <li><a href="todo-list/">todo-list/</a></li>
+      </ul>
+    </main>
+    <footer>Footer</footer>
+  </body>
 </html>
