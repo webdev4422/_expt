@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Template and Slot example</h1>
+    <!-- template for my-paragraph element -->
+    <template id="my-paragraph">
+      <style>
+        p {
+          color: white;
+          background-color: #666;
+          padding: 5px;
+        }
+      </style>
+      <p><slot name="my-text">My template text</slot></p>
+    </template>
+
+    <!-- my-paragraph created with custom element + shadow dom + template below -->
+    <my-paragraph>
+      <span slot="my-text">Let's have some different text!</span>
+    </my-paragraph>
+
+    <!-- List example -->
+    <!-- <my-paragraph>
+      <ul slot="my-text">
+        <li>Let's have some different text!</li>
+        <li>In a list!</li>
+      </ul>
+    </my-paragraph> -->
+  </body>
+  <script>
+    // Append template to DOM
+    // let template = document.getElementById('my-paragraph')
+    // let templateContent = template.content
+    // document.body.appendChild(templateContent)
+
+    customElements.define(
+      'my-paragraph',
+      class extends HTMLElement {
+        constructor() {
+          super()
+          let template = document.getElementById('my-paragraph')
+          let templateContent = template.content
+
+          const shadowRoot = this.attachShadow({ mode: 'open' })
+          shadowRoot.appendChild(templateContent.cloneNode(true))
+        }
+      }
+    )
+  </script>
+</html>

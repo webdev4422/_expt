@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG Exmaples</title>
+  </head>
+  <body>
+    <h1>SVG Examples</h1>
+
+    <h2>SVG</h2>
+    <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="red" />
+
+      <circle cx="150" cy="100" r="80" fill="green" />
+
+      <text x="150" y="125" font-size="60" text-anchor="middle" fill="white">SVG</text>
+    </svg>
+
+    <h2>Basic Shapes</h2>
+    <?xml version="1.0" standalone="no"?>
+    <svg width="200" height="250" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <rect
+        x="10"
+        y="10"
+        width="30"
+        height="30"
+        stroke="black"
+        fill="transparent"
+        stroke-width="5"
+      />
+      <rect
+        x="60"
+        y="10"
+        rx="10"
+        ry="10"
+        width="30"
+        height="30"
+        stroke="black"
+        fill="transparent"
+        stroke-width="5"
+      />
+
+      <circle cx="25" cy="75" r="20" stroke="red" fill="transparent" stroke-width="5" />
+      <ellipse cx="75" cy="75" rx="20" ry="5" stroke="red" fill="transparent" stroke-width="5" />
+
+      <line x1="10" x2="50" y1="110" y2="150" stroke="orange" stroke-width="5" />
+      <polyline
+        points="60 110 65 120 70 115 75 130 80 125 85 140 90 135 95 150 100 145"
+        stroke="orange"
+        fill="transparent"
+        stroke-width="5"
+      />
+
+      <polygon
+        points="50 160 55 180 70 180 60 190 65 205 50 195 35 205 40 190 30 180 45 180"
+        stroke="green"
+        fill="transparent"
+        stroke-width="5"
+      />
+
+      <path d="M20,230 Q40,205 50,230 T90,230" fill="none" stroke="blue" stroke-width="5" />
+    </svg>
+
+    <h2>SVG Path</h2>
+
+    <h3>Simple rectangle exmples</h3>
+    <svg version="1.1" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+      <!-- <rect width="100" height="100" /> -->
+      <!-- <path d="M 0 0 l 100 0 l 0 100 l -100 0" /> -->
+      <!-- <path d="M 0 0 L 100 0 L 100 100 L 0 100" /> -->
+      <!-- <path d="M 0 0 h 100 v 100 h -100" /> -->
+      <!-- <path d="M 0 0 H 100 V 100 H 0" /> -->
+      <path d="M0 0 H100 V100 H0 Z" />
+    </svg>
+
+    <h3>Bézier Curves: cubic and quadratic curve</h3>
+    <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80" stroke="black" fill="transparent" />
+      <path d="M 10 80 Q 52.5 10, 95 80 T 180 80" stroke="black" fill="transparent" />
+    </svg>
+
+    <h3>Arcs</h3>
+    <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M 10 315 L 110 215 A 30 50 0 0 1 162.55 162.45 L 172.55 152.45 A 30 50 -45 0 1 215.1 109.9 L 315 10"
+        stroke="black"
+        fill="green"
+        stroke-width="2"
+        fill-opacity="0.5"
+      />
+    </svg>
+
+    <h2>Style</h2>
+    <h3>Inline style</h3>
+    <svg>
+      <rect x="10" height="100" y="10" width="100" style="stroke: black; fill: red" />
+    </svg>
+
+    <h3>&lt;defs&gt; style</h3>
+
+    <?xml version="1.0" standalone="no"?>
+    <svg width="150" height="150" xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <defs>
+        <style>
+          <![CDATA[
+                  #MyRect {
+                    stroke: black;
+                    fill: red;
+                  }
+                  #MyRect:hover {
+                  stroke: black;
+                  fill: blue;
+                }
+              ]]>
+        </style>
+      </defs>
+
+      <rect x="10" height="100" y="10" width="100" id="MyRect" />
+    </svg>
+
+    <h2>Text</h2>
+    <svg>
+      <rect width="300" height="200" fill="purple" />
+      <text x="0" y="50" font-size="50" text-anchor="start" fill="blue" stroke="yellow">
+        Hello World!
+      </text>
+    </svg>
+
+    <h2>Clipping and masking</h2>
+
+    <h3>&lt;clip-Path&gt; in &lt;defs&gt;</h3>
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <defs>
+        <clipPath id="cut-off-bottom">
+          <rect x="0" y="0" width="200" height="100" />
+        </clipPath>
+      </defs>
+
+      <circle cx="100" cy="100" r="100" clip-path="url(#cut-off-bottom)" />
+    </svg>
+
+    <h3>&lt;clip-path&gt; inline</h3>
+    <svg>
+      <circle cx="100" cy="100" r="100" clip-path="inset(0 0 100 0)" />
+    </svg>
+
+    <p>
+      <code>clip-path</code> inline used as normal css property
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path">clip-path</a>
+    </p>
+
+    <h3>Mask</h3>
+    <svg
+      width="200"
+      height="200"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <defs>
+        <linearGradient id="Gradient">
+          <stop offset="0" stop-color="black" />
+          <stop offset="1" stop-color="white" />
+        </linearGradient>
+        <mask id="Mask">
+          <rect x="0" y="0" width="200" height="200" fill="url(#Gradient)" />
+        </mask>
+      </defs>
+
+      <rect x="0" y="0" width="200" height="200" fill="green" />
+      <rect x="0" y="0" width="200" height="200" fill="red" mask="url(#Mask)" />
+    </svg>
+    <svg
+      width="200"
+      height="200"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <rect x="0" y="0" width="200" height="200" fill="blue" />
+      <circle
+        cx="100"
+        cy="100"
+        r="50"
+        stroke="yellow"
+        stroke-width="40"
+        stroke-opacity=".5"
+        fill="red"
+      />
+    </svg>
+
+    <h2>Fonts</h2>
+    <svg width="100" height="100" viewBox="0 0 150 100">
+      <text font-family="Super Sans">! @ My example text</text>
+    </svg>
+  </body>
+</html>
