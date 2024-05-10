@@ -1,4 +1,3 @@
-# testfiles
-Private development environment for testing, learning and practice purposes.
+# dev-env
 
-Untrack 'Projects/' folder. Copy separate repos to this folder.
+Private development environment for testing, learning and practice purposes.
