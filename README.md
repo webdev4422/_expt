@@ -2,7 +2,7 @@
 
 ## Abbreviation
 
-'\_' - influence sort order
+'\_' - influence sort order\
 'expt' - abbreviation for experiment
 
 ## Purpose
