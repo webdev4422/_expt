@@ -1,26 +1,16 @@
 {
-  "name": "zzz-dev",
-  "version": "1.0.0",
-  "description": "Test environment",
+  "name": "expt",
+  "description": "Experimental development environment",
+  "version": "1.1.0",
   "private": true,
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "watch": "webpack --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/webdev4422/zzz-dev.git"
-  },
   "author": "temp4422",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/webdev4422/zzz-dev/issues"
-  },
-  "homepage": "https://github.com/webdev4422/zzz-dev#readme",
+  "homepage": "https://github.com/webdev4422/_expt#readme",
   "devDependencies": {
     "autoprefixer": "latest",
     "clean-webpack-plugin": "^4.0.0",
