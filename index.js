@@ -163,3 +163,17 @@ async function getGitHubUsers(names) {
   return users
 }
 // getUsers(['webdev4422', 'iliakan', 'remy', 'no.such.users'])
+
+// function msToTime(milliseconds) {
+//   // milliseconds = parseInt(milliseconds)
+//   console.log(typeof milliseconds)
+//   let h = Math.floor(milliseconds / 1000 / 60 / 60)
+//   let m = Math.floor((milliseconds / 1000 / 60 / 60 - h) * 60)
+//   let s = Math.floor(((milliseconds / 1000 / 60 / 60 - h) * 60 - m) * 60)
+//   // s < 10 ? (s = `0${s}`) : (s = `${s}`)
+//   // m < 10 ? (m = `0${m}`) : (m = `${m}`)
+//   // h < 10 ? (h = `0${h}`) : (h = `${h}`)
+//   return `${h}h:${m}m:${s}s`
+// }
+// let test = Date.now()
+// msToTime(Date.now()) //?

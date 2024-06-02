@@ -21,6 +21,10 @@
       <h1>Main</h1>
       <div class="test"></div>
       <img src="src/img/mount1-2000.jpg" width="300" />
+      <hr />
+
+      <button onclick="clickX()">Button X</button>
+
       <ul>
         <li><a href="API/">API/</a></li>
         <li><a href="MDN/">MDN/</a></li>
@@ -37,6 +41,12 @@
       const dataX = await response.json()
     }
     // fetchX()
+    function clickX() {
+      alert('Greetings my friend!')
+      let userInput = prompt('Type something!')
+      let confirmInput = confirm('Are you sure?')
+    }
   </script>
   <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+  <script src="index.js"></script>
 </html>
