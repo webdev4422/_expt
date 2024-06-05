@@ -3,7 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>css-hamburger-menu</title>
+    <style>
+      #checkbox__menu__toggle:checked ~ aside {
+        display: block;
+      }
+      aside {
+        display: none;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="navigation-menu">
+        <input id="checkbox__menu__toggle" type="checkbox" />
+        <aside>
+          <ul>
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, quaerat aliquid magni officia
+    </main>
+
+    <footer>made by webdev4422</footer>
+  </body>
 </html>
