@@ -2,8 +2,8 @@
   CSS Hamburger Menu
 
   Structure:
-  - label -> MENU BUTTON
   - input -> INPUT CHECKBOX
+  - label -> MENU BUTTON
   - aside -> MENU SIDEBAR
 
   Minimum requirement: in order for hamburger menu to work properly, 'input' must be put sibling to 'aside' element using general sibling selector '~'.
@@ -25,14 +25,20 @@
     <style>
       header {
         width: 100%;
-        height: 3rem;
+        height: 4rem;
       }
+
+      /* INPUT CHECKBOX */
+      #menu__checkbox {
+        display: none;
+      }
+
       /* MENU BUTTON */
       .menu__label {
+        margin: 1rem;
         display: flex;
         flex-flow: column;
         justify-content: space-around;
-        background: grey;
         width: 3rem;
         height: 3rem;
         cursor: pointer;
@@ -40,18 +46,28 @@
         position: absolute;
         right: 0;
         overflow: hidden;
+        border-radius: 0.5rem;
       }
       .menu__label span {
         display: block;
         background: black;
         width: 3rem;
         height: 0.5rem;
+        border-radius: 0.5rem;
+        transition: 0.5s;
       }
       /* menu button animation */
-
-      /* INPUT CHECKBOX */
-      #menu__checkbox {
-        display: none;
+      #menu__checkbox:checked ~ .menu__label span:nth-of-type(1) {
+        rotate: 45deg;
+        translate: 0 1rem;
+      }
+      #menu__checkbox:checked ~ .menu__label span:nth-of-type(2) {
+        opacity: 0;
+        width: 0;
+      }
+      #menu__checkbox:checked ~ .menu__label span:nth-of-type(3) {
+        rotate: -45deg;
+        translate: 0 -1rem;
       }
 
       /* MENU SIDEBAR */
@@ -69,13 +85,13 @@
   <body>
     <header>
       <div class="navigation-menu">
+        <!-- INPUT CHECKBOX -->
+        <input id="menu__checkbox" type="checkbox" />
+
         <!-- MENU BUTTON -->
         <label for="menu__checkbox" class="menu__label">
           <span></span><span></span><span></span>
         </label>
-
-        <!-- INPUT CHECKBOX -->
-        <input id="menu__checkbox" type="checkbox" checked />
 
         <!-- MENU SIDEBAR -->
         <aside class="sidebar">
