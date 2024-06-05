@@ -1,14 +1,55 @@
+<!--
+  CSS Hamburger Menu
+
+  Structure:
+  - label -> MENU BUTTON
+  - input -> INPUT CHECKBOX
+  - aside -> MENU SIDEBAR
+
+  Minimum requirement: in order for hamburger menu to work properly, 'input' must be put sibling to 'aside' element using general sibling selector '~'.
+
+  The 'input' can be replaced by 'label' element and placed anywhere
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>css-hamburger-menu</title>
+
+    <!-- prettier-ignore  -->
     <style>
-      #checkbox__menu__toggle:checked ~ aside {
+    /*CSS-RESET-START*/*,*::before,*::after{box-sizing:border-box;margin:0;border:0;padding:0}body{line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-family:sans-serif;}img,picture,video,canvas,svg{display:block;max-width:100%;}input,button,textarea,select{font:inherit;}p,h1,h2,h3,h4,h5,h6{overflow-wrap:break-word;}/*CSS-RESET-END*/
+    </style>
+
+    <style>
+      /* MENU BUTTON */
+      .menu__label {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+        background: grey;
+        width: 3rem;
+        height: 3rem;
+        overflow: hidden;
+      }
+      .menu__label span {
+        display: block;
+        background: black;
+        width: 3rem;
+        height: 0.5rem;
+      }
+
+      /* INPUT CHECKBOX */
+      #menu__checkbox {
+        display: none;
+      }
+
+      /* MENU SIDEBAR */
+      #menu__checkbox:checked ~ .sidebar {
         display: block;
       }
-      aside {
+      .sidebar {
         display: none;
       }
     </style>
@@ -16,8 +57,16 @@
   <body>
     <header>
       <div class="navigation-menu">
-        <input id="checkbox__menu__toggle" type="checkbox" />
-        <aside>
+        <!-- MENU BUTTON -->
+        <label for="menu__checkbox" class="menu__label">
+          <span></span><span></span><span></span>
+        </label>
+
+        <!-- INPUT CHECKBOX -->
+        <input id="menu__checkbox" type="checkbox" />
+
+        <!-- MENU SIDEBAR -->
+        <aside class="sidebar">
           <ul>
             <li>a</li>
             <li>b</li>
@@ -28,9 +77,15 @@
     </header>
 
     <main>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, quaerat aliquid magni officia
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, quaerat aliquid magni
+        officia ea iure iste dignissimos ratione porro architecto ducimus provident fugiat esse modi
+        expedita commodi quis numquam error.
+      </p>
     </main>
 
-    <footer>made by webdev4422</footer>
+    <footer>
+      <p>footer</p>
+    </footer>
   </body>
 </html>
