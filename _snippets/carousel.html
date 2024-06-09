@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      span {
+        display: none;
+        font-size: 5rem;
+      }
+      .visible {
+        display: inline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- create your markup and styles -->
+    <!-- <img src="https://en.js.cx/carousel/1.png" /> -->
+
+    <div class="container">
+      <button class="arrow previous">⇦</button>
+      <button class="arrow next">⇨</button>
+
+      <div class="images">
+        <span class="visible">😋 1</span>
+        <span>😛 2</span>
+        <span>😝 3</span>
+        <span>😜 4</span>
+        <span>🤪 5</span>
+      </div>
+    </div>
+
+    <script>
+      const images = document.querySelectorAll('span')
+      const next = document.querySelector('.next')
+      const previous = document.querySelector('.previous')
+      let i = 0
+      let lastVisible = images[0]
+
+      next.addEventListener('click', function (e) {
+        i++
+        if (i === images.length) i = 0
+        if (lastVisible) lastVisible.classList.remove('visible')
+        images[i].classList.add('visible')
+        lastVisible = images[i]
+      })
+
+      previous.addEventListener('click', function (e) {
+        i--
+        if (i < 0) i = images.length - 1
+        if (lastVisible) lastVisible.classList.remove('visible')
+        images[i].classList.add('visible')
+        lastVisible = images[i]
+      })
+    </script>
+  </body>
+</html>
