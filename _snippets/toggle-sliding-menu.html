@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      #opened,
+      #list {
+        display: none;
+        transition: 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="wrapper">
+      <span id="collapsed">▶</span>
+      <span id="opened">▼</span>
+      Sweeties (click me)!
+    </p>
+
+    <ul id="list">
+      <li>Cake</li>
+      <li>Donut</li>
+      <li>Honey</li>
+    </ul>
+
+    <script>
+      const wrapper = document.querySelector('#wrapper')
+      const collapsedMenu = document.querySelector('#collapsed')
+      const openedMenu = document.querySelector('#opened')
+      const list = document.querySelector('#list')
+
+      wrapper.addEventListener('click', function (e) {
+        if (collapsedMenu.style.display === 'none') {
+          collapsedMenu.style.display = 'inline'
+          openedMenu.style.display = 'none'
+          list.style.display = 'none'
+        } else {
+          collapsedMenu.style.display = 'none'
+          openedMenu.style.display = 'inline'
+          list.style.display = 'block'
+        }
+      })
+    </script>
+  </body>
+</html>
